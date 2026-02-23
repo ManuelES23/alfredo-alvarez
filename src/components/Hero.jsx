@@ -295,7 +295,7 @@ export default function Hero() {
       </div>
 
       {/* Wave inferior */}
-      <div className='absolute bottom-0 left-0 right-0'>
+      <div className='absolute left-0 right-0' style={{ bottom: "-2px" }}>
         <svg
           viewBox='0 0 1440 60'
           fill='none'
