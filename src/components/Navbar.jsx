@@ -16,17 +16,30 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 10);
+    }
+  };
 
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        scrolled ? "shadow-md" : ""
       }`}
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -60,6 +73,7 @@ export default function Navbar() {
               <li key={l.label}>
                 <a
                   href={l.href}
+                  onClick={(e) => handleNavClick(e, l.href)}
                   className='px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 hover:text-azul-brillante'
                   style={{ color: "#4A4A4A" }}
                 >
@@ -73,6 +87,7 @@ export default function Navbar() {
           <div className='hidden lg:block'>
             <a
               href='#contacto'
+              onClick={(e) => handleNavClick(e, '#contacto')}
               className='px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:shadow-lg shadow-md'
               style={{
                 background: "linear-gradient(135deg, #1A3A8F, #00AEEF)",
@@ -126,7 +141,7 @@ export default function Navbar() {
                 <a
                   key={l.label}
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleNavClick(e, l.href)}
                   className='block px-4 py-3 rounded-lg text-sm font-medium transition-colors hover:bg-gris-claro'
                   style={{ color: "#4A4A4A" }}
                 >
@@ -136,7 +151,7 @@ export default function Navbar() {
               <div className='pt-2'>
                 <a
                   href='#contacto'
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleNavClick(e, '#contacto')}
                   className='block text-center px-4 py-3 rounded-xl text-sm font-semibold text-white'
                   style={{
                     background: "linear-gradient(135deg, #1A3A8F, #00AEEF)",
