@@ -87,7 +87,7 @@ export default function Navbar() {
           <div className='hidden lg:block'>
             <a
               href='#contacto'
-              onClick={(e) => handleNavClick(e, '#contacto')}
+              onClick={(e) => handleNavClick(e, "#contacto")}
               className='px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:shadow-lg shadow-md'
               style={{
                 background: "linear-gradient(135deg, #1A3A8F, #00AEEF)",
@@ -151,7 +151,7 @@ export default function Navbar() {
               <div className='pt-2'>
                 <a
                   href='#contacto'
-                  onClick={(e) => handleNavClick(e, '#contacto')}
+                  onClick={(e) => handleNavClick(e, "#contacto")}
                   className='block text-center px-4 py-3 rounded-xl text-sm font-semibold text-white'
                   style={{
                     background: "linear-gradient(135deg, #1A3A8F, #00AEEF)",
