@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className='min-h-screen'>
+    <div style={{ overflowX: "hidden", width: "100%" }}>
       <Navbar />
       <main>
         <Hero />

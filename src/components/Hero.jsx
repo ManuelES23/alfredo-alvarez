@@ -53,8 +53,9 @@ export default function Hero() {
   return (
     <section
       id='inicio'
-      className='relative min-h-screen flex items-center overflow-hidden pt-16'
+      className='relative flex items-center overflow-hidden pt-16'
       style={{
+        minHeight: "100svh",
         background:
           "linear-gradient(135deg, #0D2260 0%, #1A3A8F 60%, #0D2260 100%)",
       }}
