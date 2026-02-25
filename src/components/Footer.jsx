@@ -70,25 +70,16 @@ export default function Footer() {
           {/* Logo y descripción */}
           <div className='lg:col-span-2'>
             <div className='flex items-center gap-3 mb-5'>
-              <div
-                className='w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-xl'
+              <img
+                src='/img/logo/logo.png'
+                alt='Alfredo Álvarez'
                 style={{
-                  background: "linear-gradient(135deg, #1A3A8F, #00AEEF)",
+                  height: "52px",
+                  width: "auto",
+                  objectFit: "contain",
+                  display: "block",
                 }}
-              >
-                AA
-              </div>
-              <div>
-                <p className='text-white font-black text-sm leading-tight'>
-                  Alfredo Álvarez
-                </p>
-                <p
-                  className='text-xs leading-tight'
-                  style={{ color: "#00AEEF" }}
-                >
-                  Contadores Públicos
-                </p>
-              </div>
+              />
             </div>
             <p
               className='text-sm leading-relaxed mb-5'

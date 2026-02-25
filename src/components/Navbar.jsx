@@ -69,23 +69,16 @@ export default function Navbar() {
             textDecoration: "none",
           }}
         >
-          <div
+          <img
+            src='/img/logo/logo.png'
+            alt='Alfredo Álvarez'
             style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "12px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              fontWeight: 900,
-              fontSize: "18px",
-              background: "linear-gradient(135deg, #1A3A8F, #00AEEF)",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+              height: "44px",
+              width: "auto",
+              objectFit: "contain",
+              display: "block",
             }}
-          >
-            AA
-          </div>
+          />
         </a>
 
         {/* Desktop links — hidden on mobile via media query inline */}
