@@ -44,12 +44,16 @@ export default function SobreAlfredo() {
               {/* Foto */}
               <div
                 className='relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden'
-                style={{ boxShadow: "0 20px 60px rgba(13,34,96,0.25)" }}
+                style={{
+                  boxShadow: "0 20px 60px rgba(13,34,96,0.25)",
+                  background: "linear-gradient(160deg, #1A3A8F, #00AEEF)",
+                }}
               >
                 <img
-                  src='/img/material/alfredo.jpeg'
+                  src='/img/material/alfredo.png'
                   alt='Alfredo Álvarez - Contador Público Mexicano'
-                  className='w-full h-full object-cover object-top'
+                  className='w-full h-full object-cover object-bottom'
+                  style={{ transform: "scale(1.55)", transformOrigin: "top center" }}
                 />
                 {/* Overlay gradiente */}
                 <div

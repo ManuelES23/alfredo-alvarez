@@ -26,9 +26,10 @@ const iconosFlotantes = [
 ];
 
 const contactInfo = [
-  { Icon: FiMail, label: "contacto@alfredotucontador.mx" },
-  { Icon: FiMapPin, label: "Ciudad de México, México" },
-  { Icon: FiClock, label: "Lun - Vie: 9am - 6pm CST" },
+  { Icon: FiPhone, label: "668 122 0386" },
+  { Icon: FiMail, label: "aalvarez@corporativoaa.com.mx" },
+  { Icon: FiMapPin, label: "Av. Francisco I. Madero 2529, Los Mochis, Sin." },
+  { Icon: FiClock, label: "Lun - Vie: 9am - 6pm" },
 ];
 
 export default function ContactoCTA() {
@@ -197,7 +198,7 @@ export default function ContactoCTA() {
                       value={form.whatsapp}
                       onChange={handleChange}
                       required
-                      placeholder='+52 55 0000 0000'
+                      placeholder='+52 668 000 0000'
                       className='w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/40 outline-none transition-all border focus:border-azul-brillante'
                       style={{
                         background: "rgba(255,255,255,0.08)",
@@ -231,7 +232,7 @@ export default function ContactoCTA() {
             </p>
 
             <a
-              href='https://wa.me/5212345678901'
+              href='https://wa.me/526681220386'
               target='_blank'
               rel='noopener noreferrer'
               className='flex items-center justify-center lg:justify-start gap-3 px-5 py-4 rounded-2xl font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-xl shadow-lg'

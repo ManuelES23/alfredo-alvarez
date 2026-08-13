@@ -1,29 +1,18 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Stats from "./components/Stats";
-import Servicios from "./components/Servicios";
-import SobreAlfredo from "./components/SobreAlfredo";
-import Podcast from "./components/Podcast";
-import RedesSociales from "./components/RedesSociales";
-import Blog from "./components/Blog";
-import Testimonios from "./components/Testimonios";
-import ContactoCTA from "./components/ContactoCTA";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import ServiciosPage from "./pages/ServiciosPage";
 
 export default function App() {
   return (
     <div style={{ overflowX: "hidden", width: "100%" }}>
       <Navbar />
       <main>
-        <Hero />
-        <Stats />
-        <Servicios />
-        <SobreAlfredo />
-        <Podcast />
-        <RedesSociales />
-        <Blog />
-        <Testimonios />
-        <ContactoCTA />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/servicios' element={<ServiciosPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>

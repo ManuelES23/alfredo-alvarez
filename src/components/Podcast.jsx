@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FiMic, FiClock } from "react-icons/fi";
 import { FaSpotify, FaApple, FaYoutube, FaPodcast } from "react-icons/fa";
-import { episodios, plataformas } from "../data/podcast";
+import { episodios, plataformas, podcastThumbnail } from "../data/podcast";
 
 const plataformaIconMap = {
   Spotify: FaSpotify,
@@ -33,6 +33,11 @@ const categoriaBadgeColors = {
   CFDI: "#0D2260",
   SAT: "#00AEEF",
   Finanzas: "#1A3A8F",
+  "Reformas Fiscales": "#0D2260",
+  "Plataformas Digitales": "#00AEEF",
+  PTU: "#1A3A8F",
+  IVA: "#0D2260",
+  IMSS: "#00AEEF",
 };
 
 export default function Podcast() {
@@ -116,24 +121,31 @@ export default function Podcast() {
                 e.currentTarget.style.boxShadow = "";
               }}
             >
-              {/* Número y categoria */}
-              <div className='flex items-center justify-between mb-4'>
+              {/* Miniatura */}
+              <div className='relative mb-4 rounded-xl overflow-hidden'>
+                <img
+                  src={podcastThumbnail}
+                  alt={ep.titulo}
+                  className='w-full aspect-square object-cover'
+                />
                 <span
-                  className='text-3xl font-black opacity-40'
-                  style={{ color: "#00AEEF" }}
-                >
-                  {ep.numero}
-                </span>
-                <span
-                  className='px-2 py-1 rounded-lg text-xs font-bold'
+                  className='absolute top-2 right-2 px-2 py-1 rounded-lg text-xs font-bold'
                   style={{
-                    background: "rgba(0,174,239,0.2)",
-                    color: "#00AEEF",
+                    background: "rgba(13,34,96,0.85)",
+                    color: categoriaBadgeColors[ep.categoria] || "#00AEEF",
                   }}
                 >
                   {ep.categoria}
                 </span>
               </div>
+
+              {/* Número */}
+              <span
+                className='block text-2xl font-black opacity-40 mb-2'
+                style={{ color: "#00AEEF" }}
+              >
+                {ep.numero}
+              </span>
 
               {/* Título */}
               <h3 className='text-base font-bold text-white mb-2 leading-snug group-hover:text-azul-brillante transition-colors'>
@@ -211,7 +223,9 @@ export default function Podcast() {
           className='text-center'
         >
           <a
-            href='#'
+            href='https://open.spotify.com/show/768HYvHCygTFRvNND77CyD'
+            target='_blank'
+            rel='noopener noreferrer'
             className='inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-white border-2 transition-all duration-200 hover:scale-105 hover:bg-white/10'
             style={{ borderColor: "#00AEEF", color: "#00AEEF" }}
           >

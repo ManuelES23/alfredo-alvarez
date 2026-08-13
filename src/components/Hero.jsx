@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { FiMic, FiStar, FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 
 const badges = [
   { label: "SAT Actualizado", delay: 0.8 },
@@ -221,75 +221,18 @@ export default function Hero() {
               {/* Foto */}
               <div
                 className='relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4'
-                style={{ borderColor: "#00AEEF" }}
+                style={{
+                  borderColor: "#00AEEF",
+                  background: "linear-gradient(160deg, #1A3A8F, #00AEEF)",
+                }}
               >
                 <img
-                  src='/img/material/alfredo.jpeg'
+                  src='/img/material/alfredo.png'
                   alt='Alfredo Álvarez - Contador Público'
-                  className='w-full h-full object-cover object-top'
+                  className='w-full h-full object-cover object-bottom'
+                  style={{ transform: "scale(1.55)", transformOrigin: "top center" }}
                 />
               </div>
-              {/* Card flotante */}
-              <motion.div
-                animate={{ y: [-6, 6, -6] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className='absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-10 bg-white rounded-2xl shadow-2xl px-4 py-3 z-20'
-              >
-                <div className='flex items-center gap-3'>
-                  <div
-                    className='w-10 h-10 rounded-xl flex items-center justify-center'
-                    style={{ background: "#F4F6F9" }}
-                  >
-                    <FiMic size={20} style={{ color: "#1A3A8F" }} />
-                  </div>
-                  <div>
-                    <p
-                      className='text-xs font-black'
-                      style={{ color: "#1A3A8F" }}
-                    >
-                      La Mesita Fiscal
-                    </p>
-                    <p className='text-xs' style={{ color: "#4A4A4A" }}>
-                      +200 episodios
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-              {/* Card flotante top */}
-              <motion.div
-                animate={{ y: [6, -6, 6] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-                className='absolute -top-6 -right-6 sm:-top-8 sm:-right-8 bg-white rounded-2xl shadow-2xl px-4 py-3 z-20'
-              >
-                <div className='flex items-center gap-2'>
-                  <div
-                    className='w-8 h-8 rounded-lg flex items-center justify-center'
-                    style={{ background: "rgba(255, 180, 0, 0.15)" }}
-                  >
-                    <FiStar size={16} style={{ color: "#FFB400" }} />
-                  </div>
-                  <div>
-                    <p
-                      className='text-xs font-black'
-                      style={{ color: "#1A3A8F" }}
-                    >
-                      +500 Clientes
-                    </p>
-                    <p className='text-xs' style={{ color: "#4A4A4A" }}>
-                      satisfechos
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>

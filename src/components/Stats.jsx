@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { FiUsers, FiAward, FiMic, FiShield } from "react-icons/fi";
+import { episodios } from "../data/podcast";
 
 const stats = [
   {
@@ -18,8 +19,8 @@ const stats = [
     Icon: FiAward,
   },
   {
-    prefix: "+",
-    value: 200,
+    prefix: "",
+    value: episodios.length,
     suffix: "",
     label: "Episodios de podcast",
     Icon: FiMic,

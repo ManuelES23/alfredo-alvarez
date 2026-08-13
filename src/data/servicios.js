@@ -1,44 +1,117 @@
 export const servicios = [
   {
     id: 1,
-    titulo: "Declaraciones Anuales",
-    descripcion:
-      "Presentación de declaración anual para personas físicas y morales. Calculamos tu ISR, deducciones autorizadas y saldos a favor ante el SAT.",
-    tags: ["ISR", "SAT", "Personas Físicas", "Personas Morales"],
+    slug: "contables",
+    titulo: "Servicios Contables",
+    subtitulo: "El control diario de tu dinero y tus declaraciones.",
+    bullets: [
+      {
+        label: "Para Personas Físicas",
+        texto:
+          "Declaraciones mensuales y anuales, control de gastos deducibles según tu régimen y optimización de tus finanzas.",
+      },
+      {
+        label: "Para Personas Morales",
+        texto:
+          "Contabilidad electrónica obligatoria, conciliaciones bancarias y emisión de Estados Financieros (Balance y Resultados).",
+      },
+      {
+        label: "Impuestos sin sustos",
+        texto: "Cálculo y presentación de IVA, ISR y retenciones a tiempo.",
+      },
+    ],
   },
   {
     id: 2,
-    titulo: "Asesoría RESICO",
-    descripcion:
-      "Te explicamos el Régimen Simplificado de Confianza paso a paso: tasas, límites de ingresos, obligaciones y cómo maximizar tus beneficios fiscales.",
-    tags: ["RESICO", "ISR", "Régimen Fiscal"],
+    slug: "devoluciones",
+    titulo: "Recuperación y Devolución de Impuestos (ISR e IVA)",
+    subtitulo: "Recupera el dinero que te pertenece.",
+    bullets: [
+      {
+        label: "Para Personas Físicas (ISR)",
+        texto:
+          "Si tras tu declaración anual obtuviste un saldo a favor por gastos médicos, colegiaturas, créditos hipotecarios o AFORE, tramitamos tu devolución para que el SAT te deposite rápido.",
+      },
+      {
+        label: "Para Personas Morales y Negocios (IVA)",
+        texto:
+          "Si eres exportador, estás en tasa 0%, o tuviste meses de altas inversiones y tus gastos superaron tus ventas, gestionamos el trámite de devolución de IVA ante el SAT con un expediente impecable.",
+      },
+      {
+        label: "Auditoría de saldos",
+        texto:
+          "Revisamos años anteriores para ver si tienes dinero guardado que aún se pueda recuperar de forma legal.",
+      },
+    ],
   },
   {
     id: 3,
-    titulo: "Contabilidad Mensual",
-    descripcion:
-      "Llevamos tu contabilidad al día: registros contables, cálculo de IVA, ISR provisional, DIOT y toda tu información financiera en orden.",
-    tags: ["IVA", "ISR", "DIOT", "Contabilidad"],
+    slug: "seguridad-social",
+    titulo: "Servicios de Seguridad Social (IMSS e INFONAVIT)",
+    subtitulo: "Cero demandas laborales y empleados protegidos.",
+    bullets: [
+      {
+        label: "Maquila de nómina",
+        texto:
+          "Cálculo exacto de sueldos, retenciones, vacaciones, aguinaldos y finiquitos.",
+      },
+      {
+        label: "Movimientos afiliatorios",
+        texto:
+          "Altas, bajas y modificaciones de salario al día ante el IMSS para evitar multas.",
+      },
+      {
+        label: "Cálculo de cuotas",
+        texto:
+          "Determinación mensual y bimestral de los pagos de IMSS e Infonavit sin errores.",
+      },
+    ],
   },
   {
     id: 4,
-    titulo: "Trámites SAT",
-    descripcion:
-      "Gestión de e.firma, obtención y actualización de RFC, activación de buzón tributario, cambios de régimen y aclaraciones ante el SAT.",
-    tags: ["RFC", "e.Firma", "SAT", "Buzón Tributario"],
+    slug: "repse",
+    titulo: "Servicios de REPSE (Subcontratación Especializada)",
+    subtitulo:
+      "Cumplimiento estricto para que tus clientes puedan deducir tus facturas.",
+    bullets: [
+      {
+        label: "Registro y Renovación",
+        texto:
+          "Tramitamos tu registro ante la STPS y gestionamos la renovación obligatoria cada 3 años.",
+      },
+      {
+        label: "Informes cuatrimestrales",
+        texto:
+          "Presentación en tiempo y forma de las declarativas obligatorias: ICSOE (IMSS) y SISUB (Infonavit).",
+      },
+      {
+        label: "Blindaje para Empresas",
+        texto:
+          "Si eres Persona Moral y contratas proveedores con REPSE, revisamos que cumplan con todo para evitarte problemas de deducibilidad.",
+      },
+    ],
   },
   {
     id: 5,
-    titulo: "Facturación CFDI 4.0",
-    descripcion:
-      "Emitimos y cancelamos tus facturas electrónicas bajo la versión 4.0 del CFDI. Configuramos tu sistema de facturación para cumplir con el SAT.",
-    tags: ["CFDI 4.0", "Facturación", "SAT"],
-  },
-  {
-    id: 6,
-    titulo: "Planeación Fiscal Estratégica",
-    descripcion:
-      "Analizamos tu situación fiscal para reducir legalmente tu carga impositiva. Estrategias de deducción, cambios de régimen y optimización tributaria.",
-    tags: ["ISR", "IVA", "Optimización", "Legal"],
+    slug: "asesoria",
+    titulo: "Servicios de Asesoría y Consultoría",
+    subtitulo: "Respuestas claras cuando tienes que tomar decisiones.",
+    bullets: [
+      {
+        label: "Estrategia fiscal",
+        texto:
+          "Planeación legal para reducir la carga de impuestos tanto de la empresa (Persona Moral) como de los socios (Personas Físicas).",
+      },
+      {
+        label: "Diagnóstico de salud fiscal",
+        texto:
+          'Revisamos tu Opinión de Cumplimiento (que esté en "Positivo") y corregimos errores antes de que el SAT envíe una multa o te restrinja los sellos digitales.',
+      },
+      {
+        label: "Retiro de utilidades",
+        texto:
+          "Asesoría a socios sobre cómo retirar las ganancias de la empresa pagando el menor impuesto posible.",
+      },
+    ],
   },
 ];

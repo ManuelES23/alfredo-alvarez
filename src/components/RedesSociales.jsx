@@ -1,51 +1,57 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect, useRef } from "react";
-import { FaInstagram, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import {
-  FiFileText,
-  FiAlertTriangle,
-  FiFile,
-  FiActivity,
-  FiBarChart2,
-  FiLock,
-} from "react-icons/fi";
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaLinkedinIn,
+  FaFacebook,
+} from "react-icons/fa";
 
+// Publicaciones reales tomadas de @alfredotucontador en Instagram
+// (fotos descargadas y alojadas en /public/img/redes)
 const publicaciones = [
   {
     tema: "RESICO",
-    subtema: "¿Qué es y cómo funciona en 2025?",
-    Icon: FiFileText,
+    subtema: "Evento presencial: RESICO vs. Actividad Empresarial",
+    imagen: "/img/redes/evento-resico.jpg",
+    url: "https://www.instagram.com/alfredotucontador/p/Dbyke_AJEZ7/",
     delay: 0,
   },
   {
-    tema: "SAT",
-    subtema: "5 errores que te generan multas",
-    Icon: FiAlertTriangle,
+    tema: "Contaduría",
+    subtema: "Un contador no solo presenta declaraciones",
+    imagen: "/img/redes/tips-contador.jpg",
+    url: "https://www.instagram.com/alfredotucontador/p/DbepnIksP4u/",
     delay: 0.05,
   },
   {
-    tema: "CFDI",
-    subtema: "Cancelación correcta paso a paso",
-    Icon: FiFile,
+    tema: "SAT",
+    subtema: "El SAT no revisa por suerte",
+    imagen: "/img/redes/sat-no-revisa.jpg",
+    url: "https://www.instagram.com/alfredotucontador/p/DbepXMCMnml/",
     delay: 0.1,
   },
   {
-    tema: "ISR",
-    subtema: "Cómo deducir tus gastos médicos",
-    Icon: FiActivity,
+    tema: "CFDI",
+    subtema: "Una factura no siempre es suficiente",
+    imagen: "/img/redes/factura-no-basta.jpg",
+    url: "https://www.instagram.com/alfredotucontador/p/DbepJTQMJ5S/",
     delay: 0.15,
   },
   {
-    tema: "IVA",
-    subtema: "Todo sobre la DIOT mensual",
-    Icon: FiBarChart2,
+    tema: "RMF 2026",
+    subtema: "¿Cómo puede afectar la RMF a tu negocio?",
+    imagen: "/img/redes/rmf-2026.jpg",
+    url: "https://www.instagram.com/alfredotucontador/p/Dbeo9l0sqBJ/",
     delay: 0.2,
   },
   {
-    tema: "e.Firma",
-    subtema: "Renovación sin cita presencial",
-    Icon: FiLock,
+    tema: "RESICO",
+    subtema: "¿Resico? No es para todos",
+    imagen: "/img/redes/resico-no-es-para-todos.jpg",
+    url: "https://www.instagram.com/alfredotucontador/reel/Db_qgV5p_OX/",
     delay: 0.25,
   },
 ];
@@ -56,8 +62,16 @@ const redes = [
     handle: "@alfredotucontador",
     Icon: FaInstagram,
     url: "https://instagram.com/alfredotucontador",
-    seguidores: "45K",
+    seguidores: "1334",
     color: "#E1306C",
+  },
+  {
+    nombre: "Facebook",
+    handle: "Alfredo Álvarez",
+    Icon: FaFacebook,
+    url: "https://www.facebook.com/CPAlfredoAlvarez",
+    seguidores: "1100",
+    color: "#1877F2",
   },
   {
     nombre: "TikTok",
@@ -83,15 +97,6 @@ const redes = [
     seguidores: "12K",
     color: "#0077B5",
   },
-];
-
-const gradients = [
-  "linear-gradient(135deg, #1A3A8F, #00AEEF)",
-  "linear-gradient(135deg, #0D2260, #1A3A8F)",
-  "linear-gradient(135deg, #00AEEF, #1A3A8F)",
-  "linear-gradient(135deg, #1A3A8F, #0D2260)",
-  "linear-gradient(135deg, #0D2260, #00AEEF)",
-  "linear-gradient(135deg, #00AEEF, #0D2260)",
 ];
 
 function FollowerCounter({ target, inView }) {
@@ -159,7 +164,10 @@ export default function RedesSociales() {
         </div>
 
         {/* Contadores de seguidores */}
-        <div ref={ref} className='grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12'>
+        <div
+          ref={ref}
+          className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12'
+        >
           {redes.map((red, i) => (
             <motion.div
               key={red.nombre}
@@ -200,22 +208,24 @@ export default function RedesSociales() {
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: pub.delay, duration: 0.4 }}
               className='relative group aspect-square rounded-2xl overflow-hidden cursor-pointer'
-              style={{ background: gradients[i] }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Patrón decorativo */}
-              <div className='absolute top-3 right-3 text-white/20 text-4xl font-black'>
-                {pub.tema}
-              </div>
+              {/* Foto real de la publicación */}
+              <img
+                src={pub.imagen}
+                alt={pub.subtema}
+                className='absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+              />
+              <div
+                className='absolute inset-0'
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(13,34,96,0) 40%, rgba(13,34,96,0.85) 100%)",
+                }}
+              />
               {/* Contenido base */}
               <div className='absolute bottom-0 left-0 right-0 p-4'>
-                <div
-                  className='w-9 h-9 rounded-xl flex items-center justify-center mb-2'
-                  style={{ background: "rgba(255,255,255,0.15)" }}
-                >
-                  <pub.Icon size={18} color='white' />
-                </div>
                 <p className='text-white font-bold text-sm leading-tight'>
                   {pub.subtema}
                 </p>
@@ -237,7 +247,9 @@ export default function RedesSociales() {
                 style={{ background: "rgba(13,34,96,0.75)" }}
               >
                 <a
-                  href='#'
+                  href={pub.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='px-4 py-2 rounded-xl text-sm font-bold text-white border-2'
                   style={{ borderColor: "#00AEEF", color: "#00AEEF" }}
                 >

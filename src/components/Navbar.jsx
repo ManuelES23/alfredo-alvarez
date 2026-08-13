@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { goToSection } from "../utils/scrollNav";
 
 const links = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Podcast", href: "#podcast" },
-  { label: "Contenido", href: "#contenido" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", id: "inicio" },
+  { label: "Podcast", id: "podcast" },
+  { label: "Contenido", id: "contenido" },
+  { label: "Blog", id: "blog" },
+  { label: "Contacto", id: "contacto" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -20,12 +23,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navigate = (href) => {
+  const navigateToSection = (id) => {
     setOpen(false);
-    const el = document.getElementById(href.replace("#", ""));
-    if (el) {
-      setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 50);
-    }
+    goToSection(navigate, location.pathname, id);
   };
 
   return (
@@ -56,12 +56,9 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a
-          href='#inicio'
-          onClick={(e) => {
-            e.preventDefault();
-            navigate("#inicio");
-          }}
+        <Link
+          to='/'
+          onClick={() => setOpen(false)}
           style={{
             display: "flex",
             alignItems: "center",
@@ -79,7 +76,7 @@ export default function Navbar() {
               display: "block",
             }}
           />
-        </a>
+        </Link>
 
         {/* Desktop links — hidden on mobile via media query inline */}
         <ul
@@ -93,13 +90,59 @@ export default function Navbar() {
           }}
           className='lg:flex!'
         >
-          {links.map((l) => (
+          <li>
+            <Link
+              to='/'
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "8px 12px",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: scrolled ? "#4A4A4A" : "rgba(255,255,255,0.9)",
+                textDecoration: "none",
+                borderRadius: "8px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#00AEEF")}
+              onMouseLeave={(e) =>
+                (e.target.style.color = scrolled
+                  ? "#4A4A4A"
+                  : "rgba(255,255,255,0.9)")
+              }
+            >
+              Inicio
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/servicios'
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "8px 12px",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: scrolled ? "#4A4A4A" : "rgba(255,255,255,0.9)",
+                textDecoration: "none",
+                borderRadius: "8px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#00AEEF")}
+              onMouseLeave={(e) =>
+                (e.target.style.color = scrolled
+                  ? "#4A4A4A"
+                  : "rgba(255,255,255,0.9)")
+              }
+            >
+              Servicios
+            </Link>
+          </li>
+          {links.slice(1).map((l) => (
             <li key={l.label}>
               <a
-                href={l.href}
+                href={`#${l.id}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(l.href);
+                  navigateToSection(l.id);
                 }}
                 style={{
                   padding: "8px 12px",
@@ -128,7 +171,7 @@ export default function Navbar() {
           href='#contacto'
           onClick={(e) => {
             e.preventDefault();
-            navigate("#contacto");
+            navigateToSection("contacto");
           }}
           style={{
             display: "none",
@@ -211,13 +254,53 @@ export default function Navbar() {
           }}
           className='lg:hidden!'
         >
-          {links.map((l) => (
+          <Link
+            to='/'
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "14px 16px",
+              borderRadius: "10px",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#4A4A4A",
+              textDecoration: "none",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F6F9")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "transparent")
+            }
+          >
+            Inicio
+          </Link>
+          <Link
+            to='/servicios'
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "14px 16px",
+              borderRadius: "10px",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#4A4A4A",
+              textDecoration: "none",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F6F9")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "transparent")
+            }
+          >
+            Servicios
+          </Link>
+          {links.slice(1).map((l) => (
             <a
               key={l.label}
-              href={l.href}
+              href={`#${l.id}`}
               onClick={(e) => {
                 e.preventDefault();
-                navigate(l.href);
+                navigateToSection(l.id);
               }}
               style={{
                 display: "block",
@@ -244,7 +327,7 @@ export default function Navbar() {
               href='#contacto'
               onClick={(e) => {
                 e.preventDefault();
-                navigate("#contacto");
+                navigateToSection("contacto");
               }}
               style={{
                 display: "block",

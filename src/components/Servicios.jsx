@@ -1,23 +1,22 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 import { servicios } from "../data/servicios";
 import {
   FiFileText,
-  FiBriefcase,
-  FiBarChart2,
-  FiCreditCard,
+  FiRefreshCw,
+  FiShield,
+  FiClipboard,
   FiTarget,
   FiArrowRight,
 } from "react-icons/fi";
-import { HiOutlineOfficeBuilding } from "react-icons/hi";
 
 const iconMap = {
   1: FiFileText,
-  2: FiBriefcase,
-  3: FiBarChart2,
-  4: HiOutlineOfficeBuilding,
-  5: FiCreditCard,
-  6: FiTarget,
+  2: FiRefreshCw,
+  3: FiShield,
+  4: FiClipboard,
+  5: FiTarget,
 };
 
 const containerVariants = {
@@ -90,79 +89,72 @@ export default function Servicios() {
           {servicios.map((servicio) => {
             const IconComp = iconMap[servicio.id];
             return (
-              <motion.div
-                key={servicio.id}
-                variants={cardVariants}
-                className='group relative bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 cursor-pointer'
-                style={{
-                  boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-                  borderLeft: "3px solid transparent",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderLeft = "3px solid #00AEEF";
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 32px rgba(0,174,239,0.15)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderLeft = "3px solid transparent";
-                  e.currentTarget.style.boxShadow =
-                    "0 2px 16px rgba(0,0,0,0.08)";
-                }}
-              >
-                {/* Icono */}
-                <div
-                  className='w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3'
-                  style={{ background: "#F4F6F9" }}
+              <motion.div key={servicio.id} variants={cardVariants}>
+                <Link
+                  to={`/servicios#${servicio.slug}`}
+                  className='group relative block h-full bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1'
+                  style={{
+                    boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+                    borderLeft: "3px solid transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderLeft = "3px solid #00AEEF";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 32px rgba(0,174,239,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderLeft = "3px solid transparent";
+                    e.currentTarget.style.boxShadow =
+                      "0 2px 16px rgba(0,0,0,0.08)";
+                  }}
                 >
-                  {IconComp && (
-                    <IconComp size={24} style={{ color: "#1A3A8F" }} />
-                  )}
-                </div>
+                  {/* Icono */}
+                  <div
+                    className='w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3'
+                    style={{ background: "#F4F6F9" }}
+                  >
+                    {IconComp && (
+                      <IconComp size={24} style={{ color: "#1A3A8F" }} />
+                    )}
+                  </div>
 
-                {/* Contenido */}
-                <h3
-                  className='text-lg font-bold mb-3 group-hover:text-azul-primario transition-colors'
-                  style={{ color: "#0D2260" }}
-                >
-                  {servicio.titulo}
-                </h3>
-                <p
-                  className='text-sm leading-relaxed mb-4'
-                  style={{ color: "#4A4A4A" }}
-                >
-                  {servicio.descripcion}
-                </p>
+                  {/* Contenido */}
+                  <h3
+                    className='text-lg font-bold mb-3 group-hover:text-azul-primario transition-colors'
+                    style={{ color: "#0D2260" }}
+                  >
+                    {servicio.titulo}
+                  </h3>
+                  <p
+                    className='text-sm leading-relaxed mb-4'
+                    style={{ color: "#4A4A4A" }}
+                  >
+                    {servicio.subtitulo}
+                  </p>
 
-                {/* Tags */}
-                <div className='flex flex-wrap gap-2'>
-                  {servicio.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className='px-2 py-1 rounded-md text-xs font-medium'
-                      style={{
-                        background: "rgba(0,174,239,0.1)",
-                        color: "#1A3A8F",
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Arrow */}
-                <div
-                  className='mt-5 text-sm font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity'
-                  style={{ color: "#00AEEF" }}
-                >
-                  Más información <FiArrowRight size={14} />
-                </div>
+                  {/* Arrow */}
+                  <div
+                    className='text-sm font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity'
+                    style={{ color: "#00AEEF" }}
+                  >
+                    Más información <FiArrowRight size={14} />
+                  </div>
+                </Link>
               </motion.div>
             );
           })}
         </motion.div>
 
         {/* CTA */}
-        <div className='text-center mt-12'>
+        <div className='text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4'>
+          <Link
+            to='/servicios'
+            className='inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold transition-all duration-200 hover:scale-105 border-2'
+            style={{ color: "#1A3A8F", borderColor: "#1A3A8F" }}
+          >
+            Ver todos los servicios
+            <FiArrowRight size={16} />
+          </Link>
           <a
             href='#contacto'
             className='inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-xl shadow-lg'

@@ -58,34 +58,23 @@ export default function Blog() {
               }}
             >
               {/* Imagen de portada */}
-              <div
-                className='relative h-44 overflow-hidden'
-                style={{
-                  background: art.gradiente
-                    .replace("from-", "")
-                    .replace("to-", "")
-                    .replace(/\[|\]/g, ""),
-                }}
-              >
+              <div className='relative h-44 overflow-hidden'>
+                <img
+                  src={art.imagen}
+                  alt={art.titulo}
+                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                />
                 <div
-                  className='w-full h-full'
+                  className='absolute inset-0'
                   style={{
-                    background: `linear-gradient(135deg, ${
-                      art.gradiente.includes("#1A3A8F") ? "#1A3A8F" : "#0D2260"
-                    }, ${
-                      art.gradiente.includes("#00AEEF") ? "#00AEEF" : "#1A3A8F"
-                    })`,
+                    background:
+                      "linear-gradient(180deg, rgba(13,34,96,0.15) 0%, rgba(13,34,96,0.55) 100%)",
                   }}
                 />
-                <div className='absolute inset-0 flex items-center justify-center'>
-                  <div className='text-white/20 text-6xl font-black'>
-                    {art.categoria}
-                  </div>
-                </div>
                 <div className='absolute top-4 left-4'>
                   <span
                     className='px-3 py-1 rounded-full text-xs font-bold text-white'
-                    style={{ background: "rgba(0,174,239,0.8)" }}
+                    style={{ background: "rgba(0,174,239,0.85)" }}
                   >
                     {art.categoria}
                   </span>

@@ -1,11 +1,26 @@
-import { FaInstagram, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaLinkedinIn,
+  FaFacebook,
+} from "react-icons/fa";
+import { servicios } from "../data/servicios";
+import { goToSection } from "../utils/scrollNav";
 
 const redesSociales = [
   {
     Icon: FaInstagram,
-    href: "https://instagram.com",
+    href: "https://instagram.com/alfredotucontador",
     label: "Instagram",
     color: "#E1306C",
+  },
+  {
+    Icon: FaFacebook,
+    href: "https://www.facebook.com/CPAlfredoAlvarez",
+    label: "Facebook",
+    color: "#1877F2",
   },
   {
     Icon: FaTiktok,
@@ -28,14 +43,6 @@ const redesSociales = [
 ];
 
 const columnas = {
-  Servicios: [
-    "Declaraciones Anuales",
-    "Asesoría RESICO",
-    "Contabilidad Mensual",
-    "Trámites SAT",
-    "Facturación CFDI 4.0",
-    "Planeación Fiscal",
-  ],
   Recursos: [
     "Blog Fiscal",
     "La Mesita Fiscal",
@@ -55,6 +62,9 @@ const columnas = {
 };
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <footer style={{ background: "#0D2260" }}>
       {/* Separador cyan */}
@@ -111,6 +121,24 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Columna de Servicios */}
+          <div>
+            <h4 className='text-white font-bold text-sm mb-4'>Servicios</h4>
+            <ul className='space-y-2'>
+              {servicios.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to={`/servicios#${s.slug}`}
+                    className='text-xs transition-colors hover:text-azul-brillante'
+                    style={{ color: "rgba(255,255,255,0.5)" }}
+                  >
+                    {s.titulo}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Columnas de links */}
           {Object.entries(columnas).map(([titulo, items]) => (
             <div key={titulo}>
@@ -145,11 +173,15 @@ export default function Footer() {
               ¿Listo para ordenar tus impuestos?
             </p>
             <p className='text-xs' style={{ color: "rgba(255,255,255,0.5)" }}>
-              contacto@alfredotucontador.mx · +52 55 0000 0000
+              aalvarez@corporativoaa.com.mx · 668 122 0386
             </p>
           </div>
           <a
             href='#contacto'
+            onClick={(e) => {
+              e.preventDefault();
+              goToSection(navigate, location.pathname, "contacto");
+            }}
             className='px-5 py-2.5 rounded-xl text-sm font-bold text-white shrink-0 transition-all hover:scale-105'
             style={{ background: "linear-gradient(135deg, #1A3A8F, #00AEEF)" }}
           >
