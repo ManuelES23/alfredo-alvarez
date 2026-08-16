@@ -28,8 +28,12 @@ const iconosFlotantes = [
 const contactInfo = [
   { Icon: FiPhone, label: "668 122 0386" },
   { Icon: FiMail, label: "aalvarez@corporativoaa.com.mx" },
-  { Icon: FiMapPin, label: "Av. Francisco I. Madero 2529, Los Mochis, Sin." },
-  { Icon: FiClock, label: "Lun - Vie: 9am - 6pm" },
+  {
+    Icon: FiMapPin,
+    label:
+      "Av. Venustiano Carranza, núm. 120, entre Guillermo Prieto y Allende, Los Mochis, Sin.",
+  },
+  { Icon: FiClock, label: "Lun - Vie: 8:30 am - 5:30 pm" },
 ];
 
 export default function ContactoCTA() {

@@ -5,6 +5,7 @@ import Stats from "../components/Stats";
 import Servicios from "../components/Servicios";
 import SobreAlfredo from "../components/SobreAlfredo";
 import Podcast from "../components/Podcast";
+import NexumBanner from "../components/NexumBanner";
 import RedesSociales from "../components/RedesSociales";
 import Blog from "../components/Blog";
 import Testimonios from "../components/Testimonios";
@@ -31,6 +32,7 @@ export default function Home() {
       <Servicios />
       <SobreAlfredo />
       <Podcast />
+      <NexumBanner />
       <RedesSociales />
       <Blog />
       <Testimonios />

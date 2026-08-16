@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const credenciales = [
-  "Contador Público Certificado",
-  "Especialista en régimen fiscal mexicano",
+  "Contador Público Colegiado",
+  "Estudiante de Derecho",
+  "Coautor de artículos en materia fiscal",
   "Creador de contenido @alfredotucontador",
   'Conductor de "La Mesita Fiscal"',
 ];
@@ -74,7 +75,7 @@ export default function SobreAlfredo() {
               >
                 <p className='text-white text-sm font-bold'>Alfredo Álvarez</p>
                 <p style={{ color: "#00AEEF" }} className='text-xs'>
-                  CP Certificado · IMCP
+                  CP Colegiado IMPC
                 </p>
               </div>
             </div>

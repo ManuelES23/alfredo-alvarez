@@ -4,9 +4,12 @@ import { gsap } from "gsap";
 import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 
 const badges = [
-  { label: "SAT Actualizado", delay: 0.8 },
-  { label: "RESICO", delay: 1.0 },
-  { label: "CFDI 4.0", delay: 1.2 },
+  { label: "Personas Físicas", delay: 0.8 },
+  { label: "Personas Morales", delay: 0.9 },
+  { label: "Agapes", delay: 1.0 },
+  { label: "Autotransporte", delay: 1.1 },
+  { label: "Plataformas Tecnológicas", delay: 1.2 },
+  { label: "Constructoras", delay: 1.3 },
 ];
 
 const words = ["Tu", "contador,", "tu", "estratega", "fiscal"];
@@ -131,10 +134,10 @@ export default function Hero() {
               transition={{ delay: 0.7, duration: 0.6 }}
               className='text-base sm:text-lg text-white/75 leading-relaxed mb-8 max-w-lg'
             >
-              Asesoría contable y fiscal para empresas y personas físicas en
-              México.{" "}
-              <span style={{ color: "#00AEEF" }}>SAT, RESICO, CFDI</span> y más,
-              sin complicaciones.
+              Asesoría contable y fiscal personalizada para personas físicas y
+              personas morales en México. Te ayudamos a optimizar tu carga
+              tributaria de forma legal, regularizar tu situación fiscal y
+              gestionar tu negocio con total paz mental.
             </motion.p>
 
             {/* CTAs */}

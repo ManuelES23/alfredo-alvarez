@@ -6,7 +6,7 @@ import { episodios } from "../data/podcast";
 const stats = [
   {
     prefix: "+",
-    value: 500,
+    value: 100,
     suffix: "",
     label: "Clientes atendidos",
     Icon: FiUsers,
@@ -29,7 +29,7 @@ const stats = [
     prefix: "",
     value: 100,
     suffix: "%",
-    label: "Actualizado SAT 2025",
+    label: "Actualizado 2026",
     Icon: FiShield,
   },
 ];

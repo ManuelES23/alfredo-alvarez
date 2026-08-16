@@ -58,7 +58,7 @@ export default function Testimonios() {
             Lo que dicen <span style={{ color: "#00AEEF" }}>mis clientes</span>
           </h2>
           <p className='text-white/60 text-base max-w-xl mx-auto'>
-            Más de 500 personas y empresas confían en Alfredo Álvarez para su
+            Más de 100 personas y empresas confían en Alfredo Álvarez para su
             contabilidad y planeación fiscal.
           </p>
         </motion.div>

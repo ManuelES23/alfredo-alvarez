@@ -136,6 +136,29 @@ export default function Navbar() {
               Servicios
             </Link>
           </li>
+          <li>
+            <Link
+              to='/nexum-fiscal'
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "8px 12px",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: scrolled ? "#4A4A4A" : "rgba(255,255,255,0.9)",
+                textDecoration: "none",
+                borderRadius: "8px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#00AEEF")}
+              onMouseLeave={(e) =>
+                (e.target.style.color = scrolled
+                  ? "#4A4A4A"
+                  : "rgba(255,255,255,0.9)")
+              }
+            >
+              NEXUM Fiscal
+            </Link>
+          </li>
           {links.slice(1).map((l) => (
             <li key={l.label}>
               <a
@@ -293,6 +316,26 @@ export default function Navbar() {
             }
           >
             Servicios
+          </Link>
+          <Link
+            to='/nexum-fiscal'
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "14px 16px",
+              borderRadius: "10px",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#4A4A4A",
+              textDecoration: "none",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F6F9")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "transparent")
+            }
+          >
+            NEXUM Fiscal
           </Link>
           {links.slice(1).map((l) => (
             <a
