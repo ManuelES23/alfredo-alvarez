@@ -220,7 +220,7 @@ export default function NexumFiscal() {
                   >
                     <FiCheckCircle size={16} style={{ color: "#25D366" }} />
                     <span className='text-xs font-bold' style={{ color: "#0A8A3E" }}>
-                      Folio timbrado exitosamente
+                      Factura timbrada correctamente
                     </span>
                   </div>
                 </div>
@@ -229,7 +229,7 @@ export default function NexumFiscal() {
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className='absolute -left-8 top-8 flex items-center gap-2 rounded-2xl px-4 py-3 border'
+                  className='absolute -left-14 -top-12 flex items-center gap-2 rounded-2xl px-4 py-3 border'
                   style={{
                     background: NAVY_2,
                     borderColor: "rgba(245,166,35,0.4)",
@@ -239,7 +239,7 @@ export default function NexumFiscal() {
                   <FiDollarSign size={16} style={{ color: AMBER }} />
                   <div>
                     <p className='text-white text-sm font-black leading-none'>
-                      $9
+                      Hasta $9
                     </p>
                     <p className='text-[10px] text-white/50'>por timbre</p>
                   </div>
