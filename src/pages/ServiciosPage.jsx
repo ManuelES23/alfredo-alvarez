@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "../hooks/useSEO";
 import { servicios } from "../data/servicios";
 import { goToSection } from "../utils/scrollNav";
 import {
@@ -32,6 +33,13 @@ const cardVariants = {
 export default function ServiciosPage() {
   const location = useLocation();
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Servicios Contables y Fiscales | Alfredo Álvarez Contador",
+    description:
+      "Servicios contables y fiscales en México: contabilidad mensual, recuperación de ISR e IVA, seguridad social IMSS/INFONAVIT, REPSE y asesoría fiscal. Cumple con el SAT sin complicaciones.",
+    path: "/servicios",
+  });
 
   // Permite llegar con /servicios#slug y hacer scroll directo a ese bloque.
   useEffect(() => {

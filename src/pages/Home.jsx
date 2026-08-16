@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useSEO } from "../hooks/useSEO";
 import Hero from "../components/Hero";
 import Stats from "../components/Stats";
 import Servicios from "../components/Servicios";
@@ -13,6 +14,13 @@ import ContactoCTA from "../components/ContactoCTA";
 
 export default function Home() {
   const location = useLocation();
+
+  useSEO({
+    title: "Alfredo Álvarez | Contador Público Mexicano - SAT, RESICO, CFDI",
+    description:
+      "Asesoría contable y fiscal para empresas y personas físicas en México. Especialista en RESICO, CFDI 4.0, declaraciones anuales y planeación fiscal. Conductor del podcast La Mesita Fiscal.",
+    path: "/",
+  });
 
   // Si llegamos desde otra página pidiendo scroll a una sección
   // (ver src/utils/scrollNav.js), o con un #hash directo en la URL.

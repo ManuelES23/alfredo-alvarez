@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useSEO } from "../hooks/useSEO";
 import {
   FiArrowRight,
   FiCheck,
@@ -37,6 +38,13 @@ const solucionIconMap = {
 const confianza = ["CFDI 4.0", "Sin mensualidad", "Respaldo contable"];
 
 export default function NexumFiscal() {
+  useSEO({
+    title: "NEXUM Fiscal | Timbrado CFDI 4.0 sin mensualidad | Alfredo Álvarez",
+    description:
+      "Timbres digitales y folios fiscales CFDI 4.0 en la nube, respaldados por un contador certificado. Sin mensualidad, sin vencimiento y con recarga inmediata.",
+    path: "/nexum-fiscal",
+  });
+
   const { ref: doloresRef, inView: doloresInView } = useInView({
     threshold: 0.15,
     triggerOnce: true,

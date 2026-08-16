@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/img/logo/logo.png" />
+    <link rel="apple-touch-icon" href="/img/logo/logo.png" />
+    <meta name="theme-color" content="#0D2260" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
       Alfredo Álvarez | Contador Público Mexicano - SAT, RESICO, CFDI
     </title>
@@ -11,12 +14,73 @@
       name="description"
       content="Asesoría contable y fiscal para empresas y personas físicas en México. Especialista en RESICO, CFDI 4.0, declaraciones anuales y planeación fiscal. Conductor del podcast La Mesita Fiscal."
     />
+    <link rel="canonical" href="https://corporativoaa.com.mx/" />
+
+    <!--
+      Nota: esta es la etiqueta por defecto (home). Las páginas /servicios y
+      /nexum-fiscal sobreescriben title/description/canonical/OG en tiempo de
+      ejecución vía src/hooks/useSEO.js. Los bots que NO ejecutan JavaScript
+      (algunos previews de link) siempre verán estos valores por defecto.
+    -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alfredo Álvarez | Contador Público" />
+    <meta property="og:locale" content="es_MX" />
+    <meta
+      property="og:title"
+      content="Alfredo Álvarez | Contador Público Mexicano - SAT, RESICO, CFDI"
+    />
+    <meta
+      property="og:description"
+      content="Asesoría contable y fiscal para empresas y personas físicas en México. Especialista en RESICO, CFDI 4.0, declaraciones anuales y planeación fiscal. Conductor del podcast La Mesita Fiscal."
+    />
+    <meta property="og:url" content="https://corporativoaa.com.mx/" />
+    <meta property="og:image" content="https://corporativoaa.com.mx/img/social/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Alfredo Álvarez | Contador Público Mexicano - SAT, RESICO, CFDI"
+    />
+    <meta
+      name="twitter:description"
+      content="Asesoría contable y fiscal para empresas y personas físicas en México. Especialista en RESICO, CFDI 4.0, declaraciones anuales y planeación fiscal."
+    />
+    <meta name="twitter:image" content="https://corporativoaa.com.mx/img/social/og-image.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Datos estructurados: schema.org AccountingService -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Alfredo Álvarez - Contador Público",
+        "image": "https://corporativoaa.com.mx/img/social/og-image.png",
+        "url": "https://corporativoaa.com.mx",
+        "email": "aalvarez@corporativoaa.com.mx",
+        "telephone": "+52-668-122-0386",
+        "areaServed": "MX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ciudad de México",
+          "addressCountry": "MX"
+        },
+        "sameAs": [
+          "https://instagram.com/alfredotucontador",
+          "https://www.facebook.com/CPAlfredoAlvarez"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
