@@ -112,16 +112,16 @@ export default function CursoDetalle() {
         </div>
       </section>
 
-      {/* Imagen */}
-      <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10'>
+      {/* Imagen (póster del evento, se muestra completo sin recortar) */}
+      <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10 flex justify-center'>
         <div
-          className='rounded-2xl overflow-hidden'
+          className='rounded-2xl overflow-hidden w-full max-w-[280px] sm:max-w-xs'
           style={{ boxShadow: "0 8px 32px rgba(13,34,96,0.25)" }}
         >
           <img
             src={curso.imagen}
             alt={curso.titulo}
-            className='w-full h-[280px] sm:h-[360px] object-cover'
+            className='w-full h-auto block'
           />
         </div>
       </div>

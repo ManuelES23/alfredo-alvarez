@@ -9,7 +9,6 @@ import {
   FiClock,
   FiArrowRight,
   FiVideo,
-  FiTag,
 } from "react-icons/fi";
 
 function CursoCard({ curso, i }) {
@@ -27,37 +26,21 @@ function CursoCard({ curso, i }) {
         className='group block rounded-2xl overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1'
         style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.08)" }}
       >
-        <div className='relative aspect-[16/9] overflow-hidden'>
+        <div className='relative aspect-[4/5] overflow-hidden' style={{ background: "#0D2260" }}>
           <img
             src={curso.imagen}
             alt={curso.titulo}
-            className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
-          />
-          <div
-            className='absolute inset-0'
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(13,34,96,0) 50%, rgba(13,34,96,0.75) 100%)",
-            }}
+            className='w-full h-full object-contain transition-transform duration-500 group-hover:scale-105'
           />
           <span
-            className='absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white'
+            className='absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm'
             style={{
               background:
-                curso.estado === "proximo" ? "#00AEEF" : "rgba(255,255,255,0.2)",
+                curso.estado === "proximo" ? "#00AEEF" : "#1A3A8F",
             }}
           >
             {curso.estado === "proximo" ? "Próximo curso" : "Curso pasado"}
           </span>
-          {curso.modalidad && (
-            <span
-              className='absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white'
-              style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(4px)" }}
-            >
-              <FiTag size={12} />
-              {curso.modalidad}
-            </span>
-          )}
         </div>
 
         <div className='p-6'>
