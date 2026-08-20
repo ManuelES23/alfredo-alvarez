@@ -6,7 +6,6 @@ const links = [
   { label: "Inicio", id: "inicio" },
   { label: "Podcast", id: "podcast" },
   { label: "Contenido", id: "contenido" },
-  { label: "Blog", id: "blog" },
   { label: "Contacto", id: "contacto" },
 ];
 
@@ -159,7 +158,81 @@ export default function Navbar() {
               NEXUM Fiscal
             </Link>
           </li>
-          {links.slice(1).map((l) => (
+          {links.slice(1, 3).map((l) => (
+            <li key={l.label}>
+              <a
+                href={`#${l.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateToSection(l.id);
+                }}
+                style={{
+                  padding: "8px 12px",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  color: scrolled ? "#4A4A4A" : "rgba(255,255,255,0.9)",
+                  textDecoration: "none",
+                  borderRadius: "8px",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "#00AEEF")}
+                onMouseLeave={(e) =>
+                  (e.target.style.color = scrolled
+                    ? "#4A4A4A"
+                    : "rgba(255,255,255,0.9)")
+                }
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <Link
+              to='/blog'
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "8px 12px",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: scrolled ? "#4A4A4A" : "rgba(255,255,255,0.9)",
+                textDecoration: "none",
+                borderRadius: "8px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#00AEEF")}
+              onMouseLeave={(e) =>
+                (e.target.style.color = scrolled
+                  ? "#4A4A4A"
+                  : "rgba(255,255,255,0.9)")
+              }
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/cursos'
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "8px 12px",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: scrolled ? "#4A4A4A" : "rgba(255,255,255,0.9)",
+                textDecoration: "none",
+                borderRadius: "8px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#00AEEF")}
+              onMouseLeave={(e) =>
+                (e.target.style.color = scrolled
+                  ? "#4A4A4A"
+                  : "rgba(255,255,255,0.9)")
+              }
+            >
+              Cursos
+            </Link>
+          </li>
+          {links.slice(3).map((l) => (
             <li key={l.label}>
               <a
                 href={`#${l.id}`}
@@ -337,7 +410,75 @@ export default function Navbar() {
           >
             NEXUM Fiscal
           </Link>
-          {links.slice(1).map((l) => (
+          {links.slice(1, 3).map((l) => (
+            <a
+              key={l.label}
+              href={`#${l.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                navigateToSection(l.id);
+              }}
+              style={{
+                display: "block",
+                padding: "14px 16px",
+                borderRadius: "10px",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: "#4A4A4A",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "#F4F6F9")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "transparent")
+              }
+            >
+              {l.label}
+            </a>
+          ))}
+          <Link
+            to='/blog'
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "14px 16px",
+              borderRadius: "10px",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#4A4A4A",
+              textDecoration: "none",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F6F9")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "transparent")
+            }
+          >
+            Blog
+          </Link>
+          <Link
+            to='/cursos'
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "14px 16px",
+              borderRadius: "10px",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#4A4A4A",
+              textDecoration: "none",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F6F9")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "transparent")
+            }
+          >
+            Cursos
+          </Link>
+          {links.slice(3).map((l) => (
             <a
               key={l.label}
               href={`#${l.id}`}

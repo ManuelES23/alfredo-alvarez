@@ -61,11 +61,18 @@ body {
 }
 
 .swiper-pagination-bullet {
-  background: rgba(255, 255, 255, 0.4) !important;
   opacity: 1 !important;
 }
 .swiper-pagination-bullet-active {
   background: #00aeef !important;
+}
+/* Fondo oscuro (Testimonios): puntos claros semitransparentes */
+.testimonios-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+/* Fondo claro (Blog): puntos grises, visibles sobre blanco */
+.blog-swiper .swiper-pagination-bullet {
+  background: rgba(26, 58, 143, 0.2) !important;
 }
 .swiper-button-prev,
 .swiper-button-next {

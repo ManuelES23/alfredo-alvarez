@@ -6,6 +6,9 @@ import Home from "./pages/Home";
 import ServiciosPage from "./pages/ServiciosPage";
 import NexumFiscal from "./pages/NexumFiscal";
 import BlogArticulo from "./pages/BlogArticulo";
+import BlogIndex from "./pages/BlogIndex";
+import Cursos from "./pages/Cursos";
+import CursoDetalle from "./pages/CursoDetalle";
 
 export default function App() {
   return (
@@ -17,7 +20,10 @@ export default function App() {
           <Route path='/' element={<Home />} />
           <Route path='/servicios' element={<ServiciosPage />} />
           <Route path='/nexum-fiscal' element={<NexumFiscal />} />
+          <Route path='/blog' element={<BlogIndex />} />
           <Route path='/blog/:slug' element={<BlogArticulo />} />
+          <Route path='/cursos' element={<Cursos />} />
+          <Route path='/cursos/:slug' element={<CursoDetalle />} />
         </Routes>
       </main>
       <Footer />

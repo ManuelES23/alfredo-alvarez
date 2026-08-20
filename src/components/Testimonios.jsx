@@ -84,7 +84,7 @@ export default function Testimonios() {
             }}
             pagination={{ clickable: true }}
             loop
-            className='pb-12'
+            className='pb-12 testimonios-swiper'
           >
             {testimonios.map((t) => (
               <SwiperSlide key={t.id}>
