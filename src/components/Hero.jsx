@@ -108,7 +108,7 @@ export default function Hero() {
               }}
             >
               <span className='w-2 h-2 rounded-full bg-azul-brillante animate-pulse' />
-              Contador Público Certificado 🇲🇽
+              Contador Público Colegiado
             </motion.div>
 
             {/* Headline con palabras animadas por GSAP */}
@@ -135,9 +135,9 @@ export default function Hero() {
               className='text-base sm:text-lg text-white/75 leading-relaxed mb-8 max-w-lg'
             >
               Asesoría contable y fiscal personalizada para personas físicas y
-              personas morales en México. Te ayudamos a optimizar tu carga
-              tributaria de forma legal, regularizar tu situación fiscal y
-              gestionar tu negocio con total paz mental.
+              personas morales. Te ayudamos a optimizar tu carga tributaria de
+              forma legal, regularizar tu situación fiscal y gestionar tu
+              negocio con total paz mental.
             </motion.p>
 
             {/* CTAs */}

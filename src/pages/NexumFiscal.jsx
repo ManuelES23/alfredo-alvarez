@@ -41,7 +41,7 @@ export default function NexumFiscal() {
   useSEO({
     title: "NEXUM Fiscal | Timbrado CFDI 4.0 sin mensualidad | Alfredo Álvarez",
     description:
-      "Timbres digitales y folios fiscales CFDI 4.0 en la nube, respaldados por un contador certificado. Sin mensualidad, sin vencimiento y con recarga inmediata.",
+      "Timbres digitales y folios fiscales CFDI 4.0 en la nube, respaldados por un contador. Sin mensualidad, sin vencimiento y con recarga inmediata.",
     path: "/nexum-fiscal",
   });
 
@@ -115,8 +115,8 @@ export default function NexumFiscal() {
               </h1>
               <p className='text-base sm:text-lg text-white/65 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0'>
                 Facturación electrónica en la nube, CFDI 4.0, respaldada por
-                un contador certificado. Paquetes de timbrado sin
-                mensualidad, sin vencimiento y con recarga inmediata.
+                un contador. Paquetes de timbrado sin mensualidad, sin
+                vencimiento y con recarga inmediata.
               </p>
 
               <div className='flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-9'>
@@ -368,7 +368,7 @@ export default function NexumFiscal() {
             })}
           </div>
 
-          {/* Sello contador certificado */}
+          {/* Sello respaldo de contador */}
           <div
             className='flex flex-col sm:flex-row items-center gap-5 rounded-2xl p-6 border'
             style={{
@@ -384,7 +384,7 @@ export default function NexumFiscal() {
             </div>
             <div className='text-center sm:text-left'>
               <p className='text-white font-bold text-base mb-1'>
-                La diferencia NEXUM: respaldo de un contador certificado
+                La diferencia NEXUM: respaldo de un contador
               </p>
               <p className='text-white/65 text-sm leading-relaxed'>
                 No es solo software. Detrás de NEXUM hay un despacho

@@ -159,7 +159,7 @@ export default function RedesSociales() {
             style={{ color: "#4A4A4A" }}
           >
             Sígueme en redes y aprende algo nuevo cada día sobre tus impuestos,
-            el SAT y cómo cuidar tu dinero.
+            tus obligaciones fiscales y cómo cuidar tu dinero.
           </p>
         </div>
 

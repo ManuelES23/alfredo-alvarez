@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FiCalendar, FiClock } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { FiCalendar, FiClock, FiUser } from "react-icons/fi";
 import { articulos } from "../data/articulos";
 
 export default function Blog() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const navigate = useNavigate();
 
   return (
     <section id='blog' className='py-20 bg-white'>
@@ -29,7 +31,7 @@ export default function Blog() {
             className='text-base max-w-xl mx-auto'
             style={{ color: "#4A4A4A" }}
           >
-            Contenido actualizado sobre el SAT, el RESICO, el CFDI y todo lo que
+            Contenido actualizado sobre el RESICO, el CFDI y todo lo que
             necesitas saber para estar fiscalmente al día.
           </p>
         </div>
@@ -39,16 +41,33 @@ export default function Blog() {
           ref={ref}
           className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'
         >
-          {articulos.map((art, i) => (
+          {articulos.map((art, i) => {
+            const esClickeable = art.url?.startsWith("/");
+            return (
             <motion.article
               key={art.id}
               initial={{ y: 40, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ delay: i * 0.12, duration: 0.5, ease: "easeOut" }}
-              className='group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 cursor-pointer'
+              className={`group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
+                esClickeable ? "cursor-pointer" : ""
+              }`}
               style={{
                 boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
               }}
+              role={esClickeable ? "link" : undefined}
+              tabIndex={esClickeable ? 0 : undefined}
+              onClick={esClickeable ? () => navigate(art.url) : undefined}
+              onKeyDown={
+                esClickeable
+                  ? (e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        navigate(art.url);
+                      }
+                    }
+                  : undefined
+              }
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow =
                   "0 12px 40px rgba(0,174,239,0.18)";
@@ -71,13 +90,21 @@ export default function Blog() {
                       "linear-gradient(180deg, rgba(13,34,96,0.15) 0%, rgba(13,34,96,0.55) 100%)",
                   }}
                 />
-                <div className='absolute top-4 left-4'>
+                <div className='absolute top-4 left-4 flex items-center gap-2'>
                   <span
                     className='px-3 py-1 rounded-full text-xs font-bold text-white'
                     style={{ background: "rgba(0,174,239,0.85)" }}
                   >
                     {art.categoria}
                   </span>
+                  {art.autor && (
+                    <span
+                      className='px-3 py-1 rounded-full text-xs font-bold text-white'
+                      style={{ background: "rgba(13,34,96,0.75)" }}
+                    >
+                      Invitado
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -89,6 +116,14 @@ export default function Blog() {
                 >
                   {art.titulo}
                 </h3>
+                {art.autor && (
+                  <p
+                    className='flex items-center gap-1.5 text-xs font-semibold mb-2'
+                    style={{ color: "#00AEEF" }}
+                  >
+                    <FiUser size={11} /> Por {art.autor.nombre}
+                  </p>
+                )}
                 <p className='text-sm leading-relaxed mb-5 text-gray-500 line-clamp-3'>
                   {art.extracto}
                 </p>
@@ -102,13 +137,12 @@ export default function Blog() {
                       <FiClock size={11} /> {art.tiempoLectura}
                     </span>
                   </div>
-                  <a
-                    href={art.url}
-                    className='text-xs font-bold transition-colors hover:opacity-80 flex items-center gap-1'
+                  <span
+                    className='text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all'
                     style={{ color: "#00AEEF" }}
                   >
                     Leer más →
-                  </a>
+                  </span>
                 </div>
                 {/* Línea cyan inferior */}
                 <div
@@ -117,7 +151,8 @@ export default function Blog() {
                 />
               </div>
             </motion.article>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}

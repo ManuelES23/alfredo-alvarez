@@ -5,6 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import ServiciosPage from "./pages/ServiciosPage";
 import NexumFiscal from "./pages/NexumFiscal";
+import BlogArticulo from "./pages/BlogArticulo";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path='/' element={<Home />} />
           <Route path='/servicios' element={<ServiciosPage />} />
           <Route path='/nexum-fiscal' element={<NexumFiscal />} />
+          <Route path='/blog/:slug' element={<BlogArticulo />} />
         </Routes>
       </main>
       <Footer />

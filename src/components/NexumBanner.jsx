@@ -49,7 +49,7 @@ export default function NexumBanner() {
               <p className='text-white/65 text-base max-w-lg mx-auto lg:mx-0'>
                 Facturación electrónica en la nube, CFDI 4.0, sin
                 mensualidad y con recarga inmediata. Respaldado por un
-                contador certificado.
+                contador.
               </p>
             </div>
 

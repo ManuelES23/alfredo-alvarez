@@ -37,7 +37,7 @@ export default function ServiciosPage() {
   useSEO({
     title: "Servicios Contables y Fiscales | Alfredo Álvarez Contador",
     description:
-      "Servicios contables y fiscales en México: contabilidad mensual, recuperación de ISR e IVA, seguridad social IMSS/INFONAVIT, REPSE y asesoría fiscal. Cumple con el SAT sin complicaciones.",
+      "Servicios contables y fiscales: contabilidad mensual, recuperación de ISR e IVA, seguridad social IMSS/INFONAVIT, REPSE y asesoría fiscal. Cumple con tus obligaciones fiscales sin complicaciones.",
     path: "/servicios",
   });
 
@@ -76,7 +76,8 @@ export default function ServiciosPage() {
           >
             Desde el control diario de tu contabilidad hasta la recuperación
             de impuestos, la seguridad social de tu equipo y el cumplimiento
-            ante el SAT. Todo explicado claro, sin tecnicismos.
+            de tus obligaciones fiscales. Todo explicado claro, sin
+            tecnicismos.
           </p>
         </div>
       </section>

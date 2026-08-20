@@ -87,7 +87,7 @@ export default function Podcast() {
             La <span style={{ color: "#00AEEF" }}>Mesita</span> Fiscal
           </h2>
           <p className='text-base sm:text-lg text-white/65 max-w-2xl mx-auto leading-relaxed'>
-            El podcast donde la fiscalidad mexicana se explica de forma clara,
+            El podcast donde la fiscalidad se explica de forma clara,
             práctica y sin tecnicismos. Nuevos episodios cada semana.
           </p>
         </motion.div>

@@ -58,7 +58,7 @@ export default function Servicios() {
             Todo lo que necesitas
             <br />
             <span style={{ color: "#00AEEF" }}>
-              para estar al día con el SAT
+              para estar al día con tus obligaciones fiscales
             </span>
           </h2>
           <div className='flex items-center justify-center gap-3 mt-6'>
@@ -73,8 +73,9 @@ export default function Servicios() {
             className='mt-4 text-base max-w-2xl mx-auto'
             style={{ color: "#4A4A4A" }}
           >
-            Servicios contables y fiscales diseñados para mexicanos que quieren
-            cumplir con el SAT sin estrés y optimizar su carga tributaria.
+            Servicios contables y fiscales diseñados para personas que quieren
+            cumplir con sus obligaciones fiscales sin estrés y optimizar su
+            carga tributaria.
           </p>
         </div>
 

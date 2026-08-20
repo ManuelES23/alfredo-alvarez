@@ -16,9 +16,9 @@ export default function Home() {
   const location = useLocation();
 
   useSEO({
-    title: "Alfredo Álvarez | Contador Público Mexicano - SAT, RESICO, CFDI",
+    title: "Alfredo Álvarez | Contador Público - RESICO, CFDI 4.0",
     description:
-      "Asesoría contable y fiscal para empresas y personas físicas en México. Especialista en RESICO, CFDI 4.0, declaraciones anuales y planeación fiscal. Conductor del podcast La Mesita Fiscal.",
+      "Asesoría contable y fiscal para empresas y personas físicas. Especialista en RESICO, CFDI 4.0, declaraciones anuales y planeación fiscal. Conductor del podcast La Mesita Fiscal.",
     path: "/",
   });
 

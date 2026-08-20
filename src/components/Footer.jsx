@@ -95,9 +95,9 @@ export default function Footer() {
               className='text-sm leading-relaxed mb-5'
               style={{ color: "rgba(255,255,255,0.55)" }}
             >
-              Contador Público certificado con más de 8 años de experiencia.
+              Contador Público colegiado con más de 10 años de experiencia.
               Especialista en RESICO, CFDI 4.0, declaraciones anuales y
-              planeación fiscal estratégica para mexicanos.
+              planeación fiscal estratégica.
             </p>
             {/* Redes */}
             <div className='flex gap-3'>

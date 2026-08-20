@@ -104,8 +104,8 @@ export default function SobreAlfredo() {
               className='text-base leading-relaxed mb-6'
               style={{ color: "#4A4A4A" }}
             >
-              Soy Alfredo Álvarez, Contador Público con más de 8 años ayudando a
-              mexicanos a entender y optimizar su situación fiscal. Creo que
+              Soy Alfredo Álvarez, Contador Público con más de 10 años ayudando a
+              personas a entender y optimizar su situación fiscal. Creo que
               todos merecen un contador que hable claro, sin tecnicismos
               innecesarios y siempre de tu lado.
             </p>
@@ -116,8 +116,8 @@ export default function SobreAlfredo() {
               Además de atender a mis clientes, comparto contenido fiscal en
               redes sociales y conduzco el podcast{" "}
               <strong style={{ color: "#1A3A8F" }}>"La Mesita Fiscal"</strong>,
-              donde explicamos el SAT, el RESICO, los CFDIs y todo lo que
-              necesitas saber para no pagar más de lo que debes.
+              donde explicamos el RESICO, los CFDIs y todo lo que necesitas
+              saber para no pagar más de lo que debes.
             </p>
 
             {/* Credenciales */}

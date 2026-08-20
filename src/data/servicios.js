@@ -30,12 +30,12 @@ export const servicios = [
       {
         label: "Para Personas Físicas (ISR)",
         texto:
-          "Si tras tu declaración anual obtuviste un saldo a favor por gastos médicos, colegiaturas, créditos hipotecarios o AFORE, tramitamos tu devolución para que el SAT te deposite rápido.",
+          "Si tras tu declaración anual obtuviste un saldo a favor por gastos médicos, colegiaturas, créditos hipotecarios o AFORE, tramitamos tu devolución para que te depositen rápido.",
       },
       {
         label: "Para Personas Morales y Negocios (IVA)",
         texto:
-          "Si eres exportador, estás en tasa 0%, o tuviste meses de altas inversiones y tus gastos superaron tus ventas, gestionamos el trámite de devolución de IVA ante el SAT con un expediente impecable.",
+          "Si eres exportador, estás en tasa 0%, o tuviste meses de altas inversiones y tus gastos superaron tus ventas, gestionamos el trámite de devolución de IVA ante la autoridad fiscal con un expediente impecable.",
       },
       {
         label: "Auditoría de saldos",
@@ -105,7 +105,7 @@ export const servicios = [
       {
         label: "Diagnóstico de salud fiscal",
         texto:
-          'Revisamos tu Opinión de Cumplimiento (que esté en "Positivo") y corregimos errores antes de que el SAT envíe una multa o te restrinja los sellos digitales.',
+          'Revisamos tu Opinión de Cumplimiento (que esté en "Positivo") y corregimos errores antes de que te lleguen multas o te restrinjan los sellos digitales.',
       },
       {
         label: "Retiro de utilidades",

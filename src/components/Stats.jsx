@@ -13,7 +13,7 @@ const stats = [
   },
   {
     prefix: "+",
-    value: 8,
+    value: 10,
     suffix: "",
     label: "Años de experiencia",
     Icon: FiAward,
