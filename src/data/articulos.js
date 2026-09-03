@@ -2,6 +2,120 @@
 // desde su CDN — no requieren descarga ni atribución).
 export const articulos = [
   {
+    id: 5,
+    slug: "retencion-iva-isr-construccion",
+    categoria: "Retenciones",
+    categoriaColor: "#1A3A8F",
+    titulo:
+      "¿Debe llevar retención de IVA e ISR la factura de un servicio de construcción?",
+    extracto:
+      "Un contratista, ingeniero o albañil independiente te factura un servicio de construcción. Te explico, con fundamento legal, por qué en este caso la respuesta casi siempre es que no debe llevar retención de IVA ni de ISR.",
+    fecha: "3 Sep 2026",
+    tiempoLectura: "5 min",
+    imagen:
+      "https://images.unsplash.com/photo-1558227691-41ea78d1f631?w=800&q=80&auto=format&fit=crop",
+    imagenPortada:
+      "https://images.unsplash.com/photo-1558227691-41ea78d1f631?w=1600&q=80&auto=format&fit=crop",
+    url: "/blog/retencion-iva-isr-construccion",
+    contenido: [
+      {
+        tipo: "titulo",
+        texto: "1. El caso: un contratista te factura y surge la duda",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Imagina una situación muy común en el día a día de cualquier empresa: una persona física —un contratista, un ingeniero o un albañil independiente— presta un servicio de construcción y le factura a una empresa (persona moral). Antes de pagar, en el área de contabilidad surge la misma pregunta de siempre: ¿esa factura debe llevar retención de IVA y de ISR?",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "La respuesta no depende de la costumbre ni de \"así se ha hecho siempre\": la ley establece con precisión cuándo procede una retención y cuándo no. En este artículo explicamos, con fundamento legal pero en lenguaje sencillo, por qué en este caso concreto la respuesta es que no debe retenerse ninguno de los dos impuestos.",
+      },
+      {
+        tipo: "titulo",
+        texto: "2. ¿Qué es una retención y por qué se hace esta pregunta?",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Retener un impuesto significa que quien paga —en este caso, la persona moral— no entrega el 100% del importe facturado a quien prestó el servicio, sino que se queda con una parte y la entera directamente a la autoridad fiscal. Es una manera de asegurar la recaudación en ciertas operaciones. Pero esta obligación no aplica a todos los servicios, solo a los que la ley señala expresamente. Por eso, antes de retener (o de dejar de hacerlo), hay que revisar si el servicio en cuestión encaja en alguno de esos supuestos.",
+      },
+      {
+        tipo: "titulo",
+        texto:
+          "3. Retención de IVA: ¿la construcción es un \"servicio personal independiente\"?",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "La Ley del IVA, en su artículo 1-A, obliga a retener el impuesto, entre otros casos, cuando una persona moral recibe servicios personales independientes prestados por una persona física.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Aquí está la clave del asunto: no todo servicio prestado por una persona física es un \"servicio personal independiente\". El artículo 14 de la misma ley aclara que un servicio tiene esa naturaleza únicamente cuando NO se trata de una actividad empresarial.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Entonces, ¿qué es una actividad empresarial? El artículo 16 del Código Fiscal de la Federación la define como las actividades comerciales, industriales, agrícolas, ganaderas, de pesca o silvícolas.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Y aquí aparece la pieza que resuelve el caso: el artículo 75 del Código de Comercio establece que la construcción es un acto de comercio. Al tener ese carácter, la construcción se considera una actividad empresarial y, por definición, deja de ser un \"servicio personal independiente\".",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Conclusión parcial: si el servicio no es \"personal independiente\" sino empresarial, no se ubica en el supuesto que obliga a retener IVA. La factura por un servicio de construcción, en este caso, no debe llevar retención de este impuesto.",
+      },
+      {
+        tipo: "titulo",
+        texto: "4. Retención de ISR: el mismo principio, otra ley",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "En materia de ISR ocurre algo muy similar. La Ley del ISR distingue con claridad dos tipos de ingresos de las personas físicas, en su artículo 100:",
+      },
+      {
+        tipo: "lista",
+        items: [
+          "Ingresos por actividades empresariales (comerciales, industriales, agrícolas, ganaderas, de pesca o silvícolas).",
+          "Ingresos por servicios profesionales, es decir, por un servicio personal independiente.",
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "La obligación de retener el 10% como pago provisional de ISR, prevista en el artículo 106, cuarto párrafo, aplica únicamente cuando una persona moral recibe servicios profesionales de una persona física, no cuando recibe un servicio de naturaleza empresarial.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Como ya vimos, la construcción es una actividad empresarial —así lo define el Código de Comercio— y no un servicio profesional. Por lo tanto, tampoco procede la retención de ISR.",
+      },
+      { tipo: "titulo", texto: "5. Conclusión" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cuando una persona física factura un servicio de construcción a una persona moral, esa factura no debe llevar retención de IVA ni de ISR. La razón es la misma en ambos casos: la construcción es, por disposición del Código de Comercio, una actividad empresarial, y las retenciones tanto de IVA como de ISR sobre pagos a personas físicas están diseñadas para servicios profesionales o personales independientes, no para actividades empresariales.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Este análisis aplica al caso general aquí descrito. Cada operación tiene particularidades —el tipo de contrato, la forma en que se presta el servicio, u otros elementos que puedan cambiar su naturaleza— que podrían modificar la conclusión. Por eso, ante cualquier duda sobre un caso concreto, lo más seguro es revisarlo con tu contador o asesor legal de confianza.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Este artículo tiene fines informativos y de divulgación; no sustituye una consulta personalizada sobre tu caso particular.",
+      },
+    ],
+  },
+  {
     id: 4,
     slug: "autoridades-fiscales-recaudacion-digital",
     categoria: "Fiscalización",
