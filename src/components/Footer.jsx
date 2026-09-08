@@ -144,17 +144,29 @@ export default function Footer() {
             <div key={titulo}>
               <h4 className='text-white font-bold text-sm mb-4'>{titulo}</h4>
               <ul className='space-y-2'>
-                {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href='#'
-                      className='text-xs transition-colors hover:text-azul-brillante'
-                      style={{ color: "rgba(255,255,255,0.5)" }}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                {items.map((item) =>
+                  item === "Calculadora ISR" ? (
+                    <li key={item}>
+                      <Link
+                        to='/calculadora-isr'
+                        className='text-xs transition-colors hover:text-azul-brillante'
+                        style={{ color: "rgba(255,255,255,0.5)" }}
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li key={item}>
+                      <a
+                        href='#'
+                        className='text-xs transition-colors hover:text-azul-brillante'
+                        style={{ color: "rgba(255,255,255,0.5)" }}
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ))}
