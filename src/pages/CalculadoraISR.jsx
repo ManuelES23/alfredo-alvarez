@@ -186,7 +186,7 @@ export default function CalculadoraISR() {
               <div className='flex justify-between'>
                 <dt style={{ color: "#4A4A4A" }}>IVA acreditable</dt>
                 <dd className='font-semibold' style={{ color: "#0D2260" }}>
-                  {formatoMoneda.format(Number(ivaAcreditable) || 0)}
+                  {formatoMoneda.format(Math.max(Number(ivaAcreditable) || 0, 0))}
                 </dd>
               </div>
               <div
