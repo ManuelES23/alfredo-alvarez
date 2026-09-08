@@ -9,6 +9,7 @@ import BlogArticulo from "./pages/BlogArticulo";
 import BlogIndex from "./pages/BlogIndex";
 import Cursos from "./pages/Cursos";
 import CursoDetalle from "./pages/CursoDetalle";
+import CalculadoraISR from "./pages/CalculadoraISR";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path='/blog/:slug' element={<BlogArticulo />} />
           <Route path='/cursos' element={<Cursos />} />
           <Route path='/cursos/:slug' element={<CursoDetalle />} />
+          <Route path='/calculadora-isr' element={<CalculadoraISR />} />
         </Routes>
       </main>
       <Footer />
