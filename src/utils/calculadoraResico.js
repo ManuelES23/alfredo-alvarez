@@ -14,7 +14,7 @@ export const TASA_RETENCION_ISR_MORAL = 0.0125; // Art. 113-F LISR
 export const TASA_RETENCION_IVA_MORAL = 0.106667; // Art. 1-A LIVA (2/3 del IVA trasladado)
 export const TASA_IVA = 0.16;
 
-function aNumeroPositivo(valor) {
+export function aNumeroPositivo(valor) {
   const numero = Number(valor);
   if (!Number.isFinite(numero) || numero <= 0) return 0;
   return numero;

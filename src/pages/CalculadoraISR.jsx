@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FiPercent, FiArrowRight, FiInfo } from "react-icons/fi";
 import { useSEO } from "../hooks/useSEO";
 import { goToSection } from "../utils/scrollNav";
-import { calcularISR, calcularIVA } from "../utils/calculadoraResico";
+import { calcularISR, calcularIVA, aNumeroPositivo } from "../utils/calculadoraResico";
 
 const formatoMoneda = new Intl.NumberFormat("es-MX", {
   style: "currency",
@@ -186,7 +186,7 @@ export default function CalculadoraISR() {
               <div className='flex justify-between'>
                 <dt style={{ color: "#4A4A4A" }}>IVA acreditable</dt>
                 <dd className='font-semibold' style={{ color: "#0D2260" }}>
-                  {formatoMoneda.format(Math.max(Number(ivaAcreditable) || 0, 0))}
+                  {formatoMoneda.format(aNumeroPositivo(ivaAcreditable))}
                 </dd>
               </div>
               <div
