@@ -153,7 +153,7 @@ export default function CursoDetalle() {
                   className='text-lg font-bold mb-4'
                   style={{ color: "#0D2260" }}
                 >
-                  Qué vamos a ver
+                  {esProximo ? "Qué vamos a ver" : "Qué vimos"}
                 </h2>
                 <ul className='space-y-3'>
                   {curso.temario.map((item, i) => (

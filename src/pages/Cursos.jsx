@@ -70,7 +70,7 @@ function CursoCard({ curso, i }) {
             className='inline-flex items-center gap-1.5 text-sm font-bold'
             style={{ color: "#1A3A8F" }}
           >
-            Ver detalle e inscribirme
+            {curso.estado === "proximo" ? "Ver detalle e inscribirme" : "Ver detalle"}
             <FiArrowRight
               size={14}
               className='transition-transform duration-200 group-hover:translate-x-1'
