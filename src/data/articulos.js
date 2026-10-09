@@ -2,6 +2,171 @@
 // desde su CDN — no requieren descarga ni atribución).
 export const articulos = [
   {
+    id: 6,
+    slug: "factura-global-vs-factura-publico-en-general",
+    categoria: "CFDI",
+    categoriaColor: "#00AEEF",
+    titulo:
+      "Factura global y factura a público en general: no son lo mismo, y confundirlas te sale en multa",
+    extracto:
+      "Mucha gente cree que la factura a público en general y la factura global son lo mismo. No lo es, y el día que llega una revisión, no saber cuál es cuál te deja sin defensa. Te explico las diferencias, los requisitos de la global y las multas.",
+    fecha: "9 Oct 2026",
+    tiempoLectura: "6 min",
+    imagen:
+      "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80&auto=format&fit=crop",
+    imagenPortada:
+      "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1600&q=80&auto=format&fit=crop",
+    url: "/blog/factura-global-vs-factura-publico-en-general",
+    contenido: [
+      {
+        tipo: "parrafo",
+        texto:
+          "Llega el cliente, paga y no pide factura. Unos le emiten en ese momento una factura a público en general; otros le dan su ticket y al cierre emiten la global. Y mucha gente cree que es lo mismo. No lo es, y el día que llega una revisión, no saber cuál es cuál te deja sin defensa.",
+      },
+      { tipo: "titulo", texto: "1. Cómo llegamos hasta aquí" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La idea no es de ayer. El artículo 29-A, fracción IV, del Código Fiscal de la Federación (CFF) permite a la autoridad dar facilidades para las ventas al público en general, y esa facilidad es la regla 2.7.1.21 de la Resolución Miscelánea Fiscal (RMF). Hasta 2021 la global se timbraba en 72 horas; en 2022 bajó a 24, como marca el artículo 39 del Reglamento del CFF (RCFF). Ese año también arrancó el Régimen Simplificado de Confianza (RESICO), previsto en el artículo 113-G de la Ley del Impuesto sobre la Renta (LISR), y con la versión 4.0 del comprobante llegó el nodo de información global.",
+      },
+      {
+        tipo: "titulo",
+        texto: "2. Factura a público en general vs. factura global",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "La **factura a público en general** es un comprobante por una sola venta, dirigido a la clave genérica del Registro Federal de Contribuyentes (RMF, regla 2.7.1.23). La **factura global** es otra cosa: una facilidad para emitir un solo comprobante por todas las ventas del periodo, respaldado por un ticket de cada operación. La **nominativa** lleva los datos del cliente.",
+      },
+      {
+        tipo: "tabla",
+        encabezados: [
+          "",
+          "Factura a público en general",
+          "Factura global",
+          "Factura nominativa",
+        ],
+        filas: [
+          [
+            "Qué ampara",
+            "Una venta",
+            "Todas las ventas del periodo",
+            "Una venta",
+          ],
+          [
+            "A quién",
+            "Genérico (XAXX010101000)",
+            "El mismo genérico",
+            "Registro Federal de Contribuyentes del cliente",
+          ],
+          [
+            "Requiere",
+            "Nada adicional",
+            "Ticket por venta e información global",
+            "Datos fiscales del cliente",
+          ],
+          ["¿Deduce o acredita?", "No", "No", "Sí, si cumple requisitos"],
+          [
+            "Fundamento",
+            "CFF, artículo 29-A; RMF, regla 2.7.1.23",
+            "RMF, regla 2.7.1.21; CFF, artículo 29",
+            "CFF, artículo 29-A",
+          ],
+        ],
+      },
+      { tipo: "titulo", texto: "3. Qué dice la regla en 2026" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La RMF 2026 mantiene la regla 2.7.1.21 y su primera modificación (9 de julio de 2026) no la tocó. Para usarla entregas ticket y emites la global; si el ticket no es válido, la facilidad se cae.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Tres cosas que se pasan por alto. Las ventas de menos de $100 no obligan a dar ticket si el cliente no lo pide, pero aun así **van dentro de la global**. Si la operación lleva retenciones, la facilidad no aplica y toca una factura por operación. Y el sector de hidrocarburos (RMF, regla 2.6.1.2) no puede usarla.",
+      },
+      { tipo: "titulo", texto: "4. Periodicidad y plazo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La global puede ser diaria, semanal o mensual. La bimestral es solo para quien siga en el Régimen de Incorporación Fiscal. La quincenal no existe en la regla. Si eres persona física en RESICO, tu global es mensual y solo lleva el monto total.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "El plazo para timbrarla es de 24 horas después del cierre. Si te dijeron que es novedad de 2026, te dijeron mal: viene de 2022.",
+      },
+      { tipo: "titulo", texto: "5. Qué debe llevar la global" },
+      {
+        tipo: "tabla",
+        encabezados: ["Bloque", "Dato obligatorio"],
+        filas: [
+          [
+            "Receptor",
+            "Genérico XAXX010101000; nombre PUBLICO EN GENERAL; código postal igual al lugar de expedición; régimen 616; uso S01",
+          ],
+          [
+            "Comprobante",
+            "Ingreso; pago en una sola exhibición; forma de pago del ticket de mayor monto; exportación 01",
+          ],
+          ["Información global", "Periodicidad, mes y año de las ventas"],
+          [
+            "Conceptos",
+            'Uno por ticket: clave 01010101, unidad ACT, cantidad 1, descripción "Venta" y folio del ticket; Impuesto al Valor Agregado e Impuesto Especial sobre Producción y Servicios, en su caso, por separado',
+          ],
+        ],
+      },
+      { tipo: "titulo", texto: "6. Cuando el cliente regresa por su factura" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Ya timbraste la global y el cliente vuelve por su factura. La misma venta no puede estar en dos comprobantes. Cancela la global y emítela de nuevo sin ese ticket, con relación tipo 04, o haz un egreso con justificación y soporte (CFF, artículo 29).",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Puedes cancelar hasta el mes de la declaración anual y con aceptación del receptor (CFF, artículo 29-A), que a la global no se le exige (RMF, regla 2.7.1.35, fracción VII). En RESICO hay un detalle: la LISR (artículo 113-G) dice que la global solo se cancela en el mes en que se emitió, pero la RMF (regla 3.13.29) te da hasta el 30 de abril del año siguiente. Y nunca condiciones la factura a que el cliente traiga su constancia de situación fiscal: es infracción (CFF, artículo 83, fracción IX).",
+      },
+      { tipo: "titulo", texto: "7. Lo que cuesta equivocarse" },
+      {
+        tipo: "parrafo",
+        texto:
+          "No expedir la global, o expedirla sin requisitos, es infracción (CFF, artículo 83, fracción VII). La multa va de **$22,300 a $127,530** y, si reincides, pueden clausurarte el establecimiento de 3 a 15 días; para personas físicas en RESICO (o en el Régimen de Incorporación Fiscal), de **$1,910 a $3,800** (CFF, artículo 84, fracción IV). Y desde noviembre de 2025, un comprobante que no ampare una operación real se considera falso (CFF, artículo 29-A, fracción IX).",
+      },
+      { tipo: "titulo", texto: "8. Dos casos de mostrador" },
+      {
+        tipo: "parrafo",
+        texto:
+          "**La tienda que vende en abonos.** Por lo devengado, la global lleva el monto total; por flujo de efectivo, solo lo cobrado en cada periodo (RMF, regla 2.7.1.21).",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "**El proveedor que le vende varias veces al mes a un cliente RESICO.** Emite una sola factura en los tres días posteriores al cierre del mes, y esas ventas salen de la global (RMF, regla 3.13.23).",
+      },
+      { tipo: "titulo", texto: "9. Qué hacer hoy" },
+      {
+        tipo: "lista",
+        items: [
+          "Revisa que los tickets cumplan la fracción III de la regla 2.7.1.21 de la RMF.",
+          "Fija una periodicidad y calendariza el cierre más 24 horas.",
+          "Concilia: ventas del punto de venta menos nominativas debe darte la base de la global.",
+          "Deja por escrito qué se hace cuando un cliente pide factura después.",
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Fundamento: RMF 2026 (Diario Oficial de la Federación, 28 de diciembre de 2025) y su primera modificación (9 de julio de 2026), reglas 2.6.1.2, 2.7.1.21, 2.7.1.35, 3.13.23 y 3.13.29; CFF, artículos 29, 29-A, 83 y 84; RCFF, artículo 39; LISR, artículo 113-G; guía de llenado del comprobante global, versión 4.0 (Servicio de Administración Tributaria).",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Aviso: contenido informativo y educativo; no sustituye asesoría profesional personalizada.",
+      },
+    ],
+  },
+  {
     id: 5,
     slug: "retencion-iva-isr-construccion",
     categoria: "Retenciones",

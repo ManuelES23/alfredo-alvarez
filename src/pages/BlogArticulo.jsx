@@ -32,6 +32,19 @@ function slugificar(texto) {
     .replace(/(^-|-$)/g, "");
 }
 
+// "Texto con **negritas**" -> ["Texto con ", <strong>negritas</strong>]
+function conNegritas(texto) {
+  return texto.split(/\*\*(.+?)\*\*/g).map((parte, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className='font-bold' style={{ color: NAVY }}>
+        {parte}
+      </strong>
+    ) : (
+      parte
+    ),
+  );
+}
+
 function RevealBlock({ children, className, style, id }) {
   const { ref, inView } = useInView({
     threshold: 0.2,
@@ -115,11 +128,67 @@ function Bloque({ bloque }) {
                   className='text-base leading-relaxed'
                   style={{ color: "#374151" }}
                 >
-                  {item}
+                  {conNegritas(item)}
                 </span>
               </motion.li>
             ))}
           </ul>
+        </RevealBlock>
+      );
+    // La primera columna de cada fila funciona como etiqueta.
+    case "tabla":
+      return (
+        <RevealBlock className='my-8'>
+          <div
+            className='overflow-x-auto rounded-2xl border'
+            style={{ borderColor: "#E5E7EB" }}
+          >
+            <table className='w-full min-w-[560px] text-sm text-left border-collapse'>
+              <thead>
+                <tr style={{ background: NAVY }}>
+                  {bloque.encabezados.map((h, i) => (
+                    <th
+                      key={i}
+                      scope='col'
+                      className='px-4 py-3 font-bold text-white align-bottom'
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {bloque.filas.map((fila, i) => (
+                  <tr
+                    key={i}
+                    className='border-t'
+                    style={{ borderColor: "#E5E7EB" }}
+                  >
+                    {fila.map((celda, j) =>
+                      j === 0 ? (
+                        <th
+                          key={j}
+                          scope='row'
+                          className='px-4 py-3 font-bold align-top'
+                          style={{ background: "#F4F6F9", color: NAVY }}
+                        >
+                          {celda}
+                        </th>
+                      ) : (
+                        <td
+                          key={j}
+                          className='px-4 py-3 leading-relaxed align-top'
+                          style={{ color: "#4A4A4A" }}
+                        >
+                          {conNegritas(celda)}
+                        </td>
+                      ),
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </RevealBlock>
       );
     case "parrafo":
@@ -129,7 +198,7 @@ function Bloque({ bloque }) {
           className='text-base leading-[1.75] mb-4'
           style={{ color: "#4A4A4A" }}
         >
-          {bloque.texto}
+          {conNegritas(bloque.texto)}
         </p>
       );
   }
