@@ -10,6 +10,7 @@ import BlogIndex from "./pages/BlogIndex";
 import Cursos from "./pages/Cursos";
 import CursoDetalle from "./pages/CursoDetalle";
 import CalculadoraISR from "./pages/CalculadoraISR";
+import CalculadoraAsimilados from "./pages/CalculadoraAsimilados";
 
 export default function App() {
   return (
@@ -26,6 +27,10 @@ export default function App() {
           <Route path='/cursos' element={<Cursos />} />
           <Route path='/cursos/:slug' element={<CursoDetalle />} />
           <Route path='/calculadora-isr' element={<CalculadoraISR />} />
+          <Route
+            path='/calculadora-asimilados'
+            element={<CalculadoraAsimilados />}
+          />
         </Routes>
       </main>
       <Footer />

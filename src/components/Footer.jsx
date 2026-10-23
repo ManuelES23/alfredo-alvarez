@@ -42,11 +42,17 @@ const redesSociales = [
   },
 ];
 
+const rutasInternas = {
+  "Calculadora ISR": "/calculadora-isr",
+  "Calculadora Asimilados": "/calculadora-asimilados",
+};
+
 const columnas = {
   Recursos: [
     "Blog Fiscal",
     "La Mesita Fiscal",
     "Calculadora ISR",
+    "Calculadora Asimilados",
     "Guía RESICO 2025",
     "Calendario SAT",
     "Preguntas Frecuentes",
@@ -145,10 +151,10 @@ export default function Footer() {
               <h4 className='text-white font-bold text-sm mb-4'>{titulo}</h4>
               <ul className='space-y-2'>
                 {items.map((item) =>
-                  item === "Calculadora ISR" ? (
+                  rutasInternas[item] ? (
                     <li key={item}>
                       <Link
-                        to='/calculadora-isr'
+                        to={rutasInternas[item]}
                         className='text-xs transition-colors hover:text-azul-brillante'
                         style={{ color: "rgba(255,255,255,0.5)" }}
                       >
