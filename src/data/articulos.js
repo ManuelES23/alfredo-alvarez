@@ -2,6 +2,132 @@
 // desde su CDN — no requieren descarga ni atribución).
 export const articulos = [
   {
+    id: 7,
+    slug: "modalidad-40-que-cambio-22-octubre",
+    categoria: "Seguridad Social",
+    categoriaColor: "#1A3A8F",
+    titulo:
+      "Modalidad 40: \"nada cambia\" es verdad a medias. Esto sí cambió el 22 de octubre",
+    extracto:
+      "El Consejo Técnico del Instituto Mexicano del Seguro Social limitó la Modalidad 40: tope al salario, sin retroactivos y fuera para independientes. Qué te toca a ti.",
+    fecha: "22 Oct 2026",
+    tiempoLectura: "4 min",
+    destacado:
+      "Acuerdo publicado · Vigente desde el 22 de octubre de 2026 · Medida temporal",
+    imagen:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format&fit=crop",
+    imagenPortada:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80&auto=format&fit=crop",
+    url: "/blog/modalidad-40-que-cambio-22-octubre",
+    contenido: [
+      {
+        tipo: "parrafo",
+        texto:
+          "Si ya estás en Modalidad 40, el Seguro Social te dice \"nada cambia\". Si piensas meterte, te dice que \"se fortalece\". Suena bonito. Pero lee el Acuerdo que salió en el Diario Oficial de la Federación el 21 de octubre de 2026 y verás que trae letra chiquita.",
+      },
+      { tipo: "titulo", texto: "¿Qué se publicó y desde cuándo aplica?" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El Consejo Técnico del Instituto aprobó el 10 de octubre un acuerdo sobre la **Continuación Voluntaria en el Régimen Obligatorio**, que es el nombre formal de la Modalidad 40 (artículo 218 de la Ley del Seguro Social). Se publicó el 21 de octubre y **entró en vigor el día hábil siguiente: hoy, 22 de octubre de 2026** (punto Séptimo).",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "No es iniciativa ni reforma a la ley. Es un acuerdo del Consejo Técnico, con fundamento en los artículos 251, 263 y 264 de la Ley del Seguro Social. Y es una **medida temporal**: ahorita te explico por qué eso importa.",
+      },
+      {
+        tipo: "titulo",
+        texto:
+          "Los cuatro cambios para nuevas inscripciones (punto Cuarto y Quinto)",
+      },
+      {
+        tipo: "lista",
+        numerada: true,
+        items: [
+          "**Tope al salario.** Te inscribes con tu último salario base de cotización registrado al causar baja, o hasta ese importe más una Unidad de Medida y Actualización. Nunca menos de un salario mínimo general vigente del resto del país. Hasta ahora, el techo era el límite general de veinticinco veces la Unidad de Medida y Actualización (artículo 28 de la Ley del Seguro Social).",
+          "**Cero retroactivos.** La inscripción corre desde la fecha de tu solicitud. Ni un día para atrás.",
+          "**Solo digital.** El trámite se hace únicamente por mecanismos digitales que den trazabilidad. Habrá un canal para casos especiales (punto Quinto).",
+          "**Independientes, fuera.** Quien esté o entre como persona trabajadora independiente (artículo 13, fracción I) no podrá contratar la Continuación Voluntaria. El Acuerdo da una razón: la modalidad de independientes sí mantiene el Seguro de Enfermedades y Maternidad.",
+        ],
+      },
+      {
+        tipo: "titulo",
+        texto: "Mito 1: \"Ya estoy inscrito y nada me cambia\"",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "A medias. El Acuerdo dice que conservas tus condiciones **hasta que termine el periodo que contrataste**. Cuando concluya y quieras seguir, entras por las reglas nuevas: tope de salario, trámite digital y sin retroactivo. El \"nada cambia\" aplica mientras dure tu periodo, no para siempre.",
+      },
+      { tipo: "titulo", texto: "Mito 2: \"La Modalidad 40 se fortalece\"" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Mejor dicho: se **frena para revisarla**. El Consejo ordenó un análisis del efecto de la Continuación Voluntaria en las finanzas del Instituto, a más tardar en seis meses. Después, la Dirección Jurídica tiene otros seis meses para proponer cambios a la normativa. Y el propio Acuerdo dice que el Consejo decidirá si esta medida continúa. O sea: hoy hay candado, y las reglas de fondo todavía no están definidas.",
+      },
+      { tipo: "titulo", texto: "Lo que sí queda a salvo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Las personas ya inscritas conservan el reconocimiento de sus **semanas y salarios cotizados efectivamente pagados**, y surten plenos efectos para calcular sus derechos pensionarios futuros (punto Séptimo). Ojo: el Acuerdo regula inscripciones, no pensiones ya otorgadas.",
+      },
+      { tipo: "titulo", texto: "Lo que nadie te está contando" },
+      {
+        tipo: "lista",
+        items: [
+          "**La estrategia de \"subir el salario al final\" se acabó.** Si tu último salario fue bajo, tu techo queda bajo. Para quien se pensiona con la Ley del Seguro Social de 1973, el cálculo parte del promedio de las últimas 250 semanas (artículo 167 de esa ley), así que el tope pega directo en el monto de la pensión.",
+          "**Al patrón le toca.** Tu salario al momento de la baja ahora define tu techo. Si tu empresa te reportó menos de lo que ganabas, te dejó amarrado. Registrar el salario real y comunicar sus modificaciones es obligación patronal (artículos 15, fracción I, y 27 de la Ley del Seguro Social). Esto también es un riesgo para el patrón.",
+          "**Independientes: no hay combo.** Si cotizas como independiente, no puedes sumar la Modalidad 40.",
+        ],
+      },
+      { tipo: "titulo", texto: "Qué hacer hoy" },
+      {
+        tipo: "lista",
+        numerada: true,
+        items: [
+          "Revisa cuándo termina tu periodo contratado, si ya estás inscrito.",
+          "Si vas a inscribirte, **no esperes**: sin retroactivos, cada día sin solicitud es un día sin cotizar.",
+          "Consulta tu estado de semanas cotizadas y tu último salario registrado antes de decidir.",
+          "Si eres patrón, audita los salarios que reportas.",
+          "Agenda una asesoría con Corporativo AA y hacemos tu cálculo.",
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Aviso: este artículo es informativo y no sustituye asesoría profesional personalizada.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "**Alfredo Álvarez · Contador Público · Corporativo AA, Los Mochis, Sinaloa**",
+      },
+      { tipo: "titulo", texto: "Fuentes" },
+      {
+        tipo: "tabla",
+        encabezados: ["Fuente", "Tipo", "Enlace"],
+        filas: [
+          [
+            "Acuerdo ACDO.AS2.HCT.101026/302.P.DG, Diario Oficial de la Federación, 21 de octubre de 2026",
+            "**Primaria**",
+            "[https://dof.gob.mx/nota_detalle.php?codigo=5801708&fecha=21/10/2026](https://dof.gob.mx/nota_detalle.php?codigo=5801708&fecha=21/10/2026)",
+          ],
+          [
+            "Ley del Seguro Social, Cámara de Diputados",
+            "**Primaria**",
+            "[https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf](https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf)",
+          ],
+          [
+            "Infografías de difusión del Instituto Mexicano del Seguro Social",
+            "Secundaria (comunicación, no norma)",
+            "Redes oficiales del Instituto",
+          ],
+        ],
+      },
+    ],
+  },
+  {
     id: 6,
     slug: "factura-global-vs-factura-publico-en-general",
     categoria: "CFDI",

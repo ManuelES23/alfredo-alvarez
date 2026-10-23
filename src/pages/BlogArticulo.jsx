@@ -32,17 +32,34 @@ function slugificar(texto) {
     .replace(/(^-|-$)/g, "");
 }
 
-// "Texto con **negritas**" -> ["Texto con ", <strong>negritas</strong>]
-function conNegritas(texto) {
-  return texto.split(/\*\*(.+?)\*\*/g).map((parte, i) =>
-    i % 2 === 1 ? (
-      <strong key={i} className='font-bold' style={{ color: NAVY }}>
-        {parte}
-      </strong>
-    ) : (
-      parte
-    ),
-  );
+// "Texto con **negritas** y [enlaces](https://...)" -> nodos de React
+function conFormato(texto) {
+  return texto.split(/(\*\*.+?\*\*|\[[^\]]+\]\([^)]+\))/g).map((parte, i) => {
+    const negrita = parte.match(/^\*\*(.+)\*\*$/);
+    if (negrita) {
+      return (
+        <strong key={i} className='font-bold' style={{ color: NAVY }}>
+          {negrita[1]}
+        </strong>
+      );
+    }
+    const enlace = parte.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (enlace) {
+      return (
+        <a
+          key={i}
+          href={enlace[2]}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='font-semibold underline break-all hover:opacity-80'
+          style={{ color: BLUE }}
+        >
+          {enlace[1]}
+        </a>
+      );
+    }
+    return parte;
+  });
 }
 
 function RevealBlock({ children, className, style, id }) {
@@ -122,13 +139,13 @@ function Bloque({ bloque }) {
                   className='mt-1 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold text-white'
                   style={{ background: CYAN }}
                 >
-                  ✓
+                  {bloque.numerada ? i + 1 : "✓"}
                 </span>
                 <span
                   className='text-base leading-relaxed'
                   style={{ color: "#374151" }}
                 >
-                  {conNegritas(item)}
+                  {conFormato(item)}
                 </span>
               </motion.li>
             ))}
@@ -180,7 +197,7 @@ function Bloque({ bloque }) {
                           className='px-4 py-3 leading-relaxed align-top'
                           style={{ color: "#4A4A4A" }}
                         >
-                          {conNegritas(celda)}
+                          {conFormato(celda)}
                         </td>
                       ),
                     )}
@@ -198,7 +215,7 @@ function Bloque({ bloque }) {
           className='text-base leading-[1.75] mb-4'
           style={{ color: "#4A4A4A" }}
         >
-          {conNegritas(bloque.texto)}
+          {conFormato(bloque.texto)}
         </p>
       );
   }
@@ -336,6 +353,16 @@ export default function BlogArticulo() {
       {/* Cuerpo del artículo */}
       <section className='py-16 bg-white' ref={contentRef}>
         <div className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8'>
+          {/* Etiqueta destacada (estatus del tema, vigencia, etc.) */}
+          {articulo.destacado && (
+            <RevealBlock
+              className='mb-8 rounded-2xl px-5 py-4 text-center text-xs sm:text-sm font-bold uppercase tracking-wider text-white'
+              style={{ background: `linear-gradient(135deg, ${NAVY}, ${BLUE})`, borderLeft: `6px solid ${CYAN}` }}
+            >
+              {articulo.destacado}
+            </RevealBlock>
+          )}
+
           {/* Índice rápido */}
           {secciones.length > 1 && (
             <RevealBlock
@@ -364,7 +391,7 @@ export default function BlogArticulo() {
                       e.currentTarget.style.color = "#4A4A4A";
                     }}
                   >
-                    {s.numero}. {s.texto}
+                    {s.numero ? `${s.numero}. ${s.texto}` : s.texto}
                   </a>
                 ))}
               </div>
